@@ -8,12 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- We'll remove the preload since it causes a warning -->
+    <!-- <link rel="preload" href="assets/images/6706800-hd_1920_1080_25fps.mp4" as="video" type="video/mp4"> -->
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <div class="logo">
-                <a href="index.html">MapleDerm</a>
+                <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="MapleDerm Logo" class="logo-img">
+                </a>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -22,7 +28,7 @@
                     <li><a href="#maintenance">Maintenance</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#about">Our Story</a></li>
-                    <li class="cta-button"><a href="#contact">Plan Your Visit</a></li>
+                    <li class="cta-button"><a href="#contact">Schedule an Appointment</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-toggle">
@@ -34,26 +40,47 @@
     </header>
 
     <section class="hero">
-        <div class="container">
+        <div class="hero-container">
+            <!-- Left Side - Hero Content -->
             <div class="hero-content">
-                <h1><em>Transform</em> your skin.<br><em>Restore</em> your confidence.</h1>
-                <a href="#contact" class="btn primary-btn">Plan your visit →</a>
+                <h1><em>Beauty</em> that lasts.<br><em>Expertly</em> delivered.</h1>
+                <p class="hero-subtitle">Comprehensive medical and cosmetic dermatology for all skin types, led by board-certified experts.</p>
+                <a href="#contact" class="btn primary-btn">Schedule an Appointment →</a>
+            </div>
+            
+            <!-- Right Side - Video -->
+            <div class="hero-video-container">
+                <video class="hero-video" autoplay muted playsinline>
+                    <source src="assets/images/6706926-hd_1920_1080_25fps.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
 
     <section class="intro">
         <div class="container">
-            <h2>We are a full-service dermatology center focused on evidence-based treatment of your skin.</h2>
+            <h2>From diagnosis to rejuvenation, we provide personalized dermatology backed by clinical precision.</h2>
             <div class="features">
                 <div class="feature">
-                    <h3>Tailored treatments for each patient</h3>
+                    <div class="feature-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Personalized care for all skin types</h3>
+                    <p>We tailor every treatment to your skin's unique needs — across all ages, tones, and concerns.</p>
                 </div>
                 <div class="feature">
-                    <h3>Care by a board-certified dermatologist</h3>
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Board-certified dermatologists</h3>
+                    <p>Your care is delivered by experienced specialists with advanced training in medical, cosmetic, and surgical dermatology.</p>
                 </div>
                 <div class="feature">
-                    <h3>State of the art technology & equipment</h3>
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Advanced tools. Proven methods.</h3>
+                    <p>We use evidence-based treatments and the latest technology to ensure precision and results.</p>
                 </div>
             </div>
             <a href="#about" class="text-link">Learn more about us</a>
@@ -62,21 +89,21 @@
 
     <section class="services" id="services">
         <div class="container">
-            <h2>Explore our full-range of treatment options</h2>
+            <h2>Discover our comprehensive dermatology services</h2>
             <div class="service-cards">
                 <div class="service-card" id="medical">
                     <h3>Medical</h3>
-                    <p>Our restorative treatments use innovative approaches to help you restore your skin.</p>
+                    <p>Restorative treatments designed to renew your skin—inside and out.</p>
                     <a href="#" class="text-link">Learn more →</a>
                 </div>
                 <div class="service-card" id="cosmetic">
                     <h3>Cosmetic</h3>
-                    <p>These expertly guided rejuvenate treatments help you to unlock the best version of yourself.</p>
+                    <p>Treatments designed to reveal your most confident self.</p>
                     <a href="#" class="text-link">Learn more →</a>
                 </div>
                 <div class="service-card" id="maintenance">
                     <h3>Maintenance</h3>
-                    <p>For those who simply want to sustain their well-being, we offer premium skin care treatments.</p>
+                    <p>Ongoing care for lasting skin health and natural glow.</p>
                     <a href="#" class="text-link">Learn more →</a>
                 </div>
             </div>
@@ -87,14 +114,14 @@
         <div class="container">
             <div class="testimonial-slider">
                 <div class="testimonial">
-                    <p>"At initial and follow-up visits, Dr. Kim has answered all of my questions patiently and provided valuable advice. I have found Dr. Kim to be a knowledgeable, concise and compassionate doctor."</p>
+                    <p>"Dr. Ghiasi is an exceptionally professional and knowledgeable dermatologist. She takes the time to listen to her patients' concerns and questions. I visited her for a dermatological condition and couldn't be more satisfied."</p>
                     <div class="client">
                         <span class="name">San</span>
                         <span class="treatment">Treated for Eczema</span>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p>"Dr. Kim was so compassionate and listened to what I was saying... I had tears in my eyes. I can't say enough about his bedside manner and how grateful I am that I've been seen by this doctor."</p>
+                    <p>"Dr. Nazli Ghiasi is a knowledgeable, compassionate, and dedicated dermatologist. She provides thorough care, explains treatments clearly, and ensures patients feel comfortable. Her professionalism and kindness make every visit a positive experience. Highly recommend!"</p>
                     <div class="client">
                         <span class="name">William</span>
                         <span class="treatment">Treated for Psoriasis</span>
@@ -116,7 +143,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>MapleDerm</h4>
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.svg" alt="MapleDerm Logo" class="footer-logo-img">
+                    </div>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="#about">Our Story</a></li>
@@ -151,5 +180,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/particles.js"></script>
 </body>
 </html> 
