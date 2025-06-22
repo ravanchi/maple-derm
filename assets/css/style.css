@@ -293,8 +293,9 @@ em {
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 5rem 0 2.5rem; /* Reduced bottom padding from 3rem */
+    padding: 7rem 0 2.5rem; /* Increased top padding to prevent navbar overlap */
     background-color: var(--secondary-color);
+    margin-top: 0; /* Ensure no additional margin causes overlap */
 }
 
 /* Hero container for side-by-side layout */
@@ -453,6 +454,7 @@ em {
 .feature p {
     font-size: 0.95rem;
     line-height: 1.6;
+    color: var(--text-color);
     opacity: 0.85;
 }
 
@@ -467,6 +469,28 @@ em {
 
 .feature:hover .feature-icon:after {
     background-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Mobile scroll animation styles */
+@media (max-width: 768px) {
+    .feature {
+        /* Removed opacity that was affecting text color */
+        transform: translateY(20px);
+        transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    
+    .feature-active {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-active .feature-icon {
+        transform: scale(1.1);
+    }
+    
+    .feature-active .feature-icon:after {
+        background-color: rgba(212, 175, 55, 0.2);
+    }
 }
 
 /* Services Section */
@@ -676,7 +700,7 @@ em {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 5rem 0 2.5rem;
+        padding: 6.5rem 0 2.5rem; /* More top padding for mobile */
     }
     
     .hero-container {
@@ -687,12 +711,17 @@ em {
     .hero-video-container {
         width: 100%;
         height: 270px; /* Reduced from 300px */
-        /* No shadow or darkening effects */
+        border-radius: 10px; /* Explicitly maintain rounded corners on mobile */
+        overflow: hidden;
     }
     
     /* Ensure the video is bright at mobile size too */
     .hero-video {
         filter: brightness(1.1);
+        border-radius: 10px; /* Matching container border radius */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     
     .hero-content {
@@ -805,7 +834,7 @@ em {
     }
     
     .footer-logo-img {
-        height: 40px;
+        height: 60px;
     }
 }
 
@@ -820,6 +849,7 @@ em {
     
     .hero {
         min-height: 70vh; /* Reduced height for mobile */
+        padding-top: 6rem; /* Adjust top padding for smallest screens */
     }
     
     section {
@@ -828,5 +858,16 @@ em {
     
     .cta {
         padding: 2.5rem 0;
+    }
+    
+    /* Additional mobile fixes */
+    .hero-video-container,
+    .hero-video {
+        border-radius: 8px; /* Slightly smaller radius on very small screens */
+    }
+    
+    /* Ensure footer logo doesn't get too small on very small screens */
+    .footer-logo-img {
+        height: 55px;
     }
 } 
