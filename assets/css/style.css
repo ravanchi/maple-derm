@@ -10,6 +10,23 @@
     --transition: all 0.3s ease;
 }
 
+/* Device type classes */
+body.is-desktop .mobile-only {
+    display: none !important;
+}
+
+body.is-desktop .desktop-only {
+    display: block !important;
+}
+
+body.is-mobile .desktop-only {
+    display: none !important;
+}
+
+body.is-mobile .mobile-only {
+    display: block !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1028,23 +1045,11 @@ em {
     }
 }
 
-/* Responsive visibility classes */
-.desktop-only {
-    display: block;
-}
-
-.mobile-only {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .desktop-only {
-        display: none;
-    }
-    
-    .mobile-only {
-        display: block;
-    }
+/* Social Icons in Nav */
+.social-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 /* Add a media query for the specific breakpoint where the button was breaking */
@@ -1056,13 +1061,6 @@ em {
     .main-nav a {
         font-size: 0.95rem; /* Slightly smaller font for navbar items */
     }
-}
-
-/* Social Icons in Nav */
-.social-nav {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
 }
 
 .social-nav a {

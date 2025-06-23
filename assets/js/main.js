@@ -1,7 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Define mobile breakpoint consistently
+    const mobileBreakpoint = 768;
+    
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
+    
+    // Check initial state for proper desktop/mobile display
+    const checkMobileState = function() {
+        const isMobile = window.innerWidth <= mobileBreakpoint;
+        document.body.classList.toggle('is-mobile', isMobile);
+        document.body.classList.toggle('is-desktop', !isMobile);
+    };
+    
+    // Run check on load
+    checkMobileState();
     
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
@@ -16,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdownItems.forEach(item => {
         item.addEventListener('click', function(e) {
             // Only handle dropdown toggle on mobile
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= mobileBreakpoint) {
                 e.preventDefault();
                 const parent = this.parentNode;
                 parent.classList.toggle('active');
@@ -33,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
+        checkMobileState();
+        if (window.innerWidth > mobileBreakpoint) {
             document.querySelectorAll('.has-dropdown').forEach(item => {
                 item.classList.remove('active');
             });

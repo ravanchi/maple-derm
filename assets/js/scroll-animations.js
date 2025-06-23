@@ -1,6 +1,7 @@
 // Scroll Animation for Features on Mobile
 document.addEventListener('DOMContentLoaded', function() {
-    const isMobile = window.innerWidth <= 768; // Check if we're on a mobile device
+    const mobileBreakpoint = 768;
+    const isMobile = window.innerWidth <= mobileBreakpoint; // Check if we're on a mobile device
     
     if (isMobile) {
         const features = document.querySelectorAll('.feature');
@@ -26,4 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(feature);
         });
     }
+    
+    // Re-check on window resize
+    window.addEventListener('resize', function() {
+        const isCurrentlyMobile = window.innerWidth <= mobileBreakpoint;
+        // Only re-initialize if user switches from desktop to mobile
+        if (isCurrentlyMobile && !isMobile) {
+            location.reload(); // Simple solution - reload the page
+        }
+    });
 }); 
