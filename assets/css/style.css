@@ -193,9 +193,9 @@ em {
 
 .main-nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .main-nav a {
@@ -242,6 +242,10 @@ em {
     transition: var(--transition);
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); /* Enhanced glow */
     white-space: nowrap; /* Prevent text wrapping by default */
+    height: 42px; /* Fixed height for consistency */
+    display: flex; /* Use flex for centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .cta-button a:hover {
@@ -491,6 +495,14 @@ em {
     .feature-active .feature-icon:after {
         background-color: rgba(214, 183, 91, 0.15);
     }
+    
+    /* Maintain consistent button height on mobile */
+    .cta-button a {
+        height: 42px; /* Match desktop height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* Services Section */
@@ -718,18 +730,28 @@ em {
 /* Handle flexible navigation for medium screen sizes */
 @media (max-width: 1024px) and (min-width: 769px) {
     .main-nav ul {
-        gap: 1rem 1.5rem; /* row-gap column-gap */
-        justify-content: center;
+        gap: 1rem; /* row-gap column-gap */
+        justify-content: flex-end;
     }
     
     .cta-button {
-        margin-top: 0.5rem;
-        flex-basis: 100%;
-        text-align: center;
+        margin-left: 0.5rem;
     }
     
     .cta-button a {
-        padding: 10px 20px;
+        padding: 8px 16px; /* Slightly smaller padding */
+        font-size: 0.9rem; /* Slightly smaller text */
+        height: auto; /* Ensure height remains consistent */
+        line-height: 1.5;
+    }
+    
+    /* Maintain consistent button height at medium sizes too */
+    .cta-button a {
+        height: 42px; /* Match desktop height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 15px; /* Slightly smaller horizontal padding */
     }
 }
 
@@ -910,5 +932,174 @@ em {
     /* Ensure footer logo doesn't get too small on very small screens */
     .footer-logo-img {
         height: 55px;
+    }
+}
+
+/* Dropdown Menu Styles */
+.has-dropdown {
+    position: relative;
+}
+
+.has-dropdown > a:after {
+    display: none; /* Hide the dropdown caret */
+}
+
+.has-dropdown:hover > a:after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -15px; /* Further adjust to better align text with parent */
+    min-width: 180px;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    border: 1px solid var(--border-color);
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px; /* Reduce left padding from 20px to 16px */
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--bg-accent);
+    color: var(--primary-color);
+}
+
+.dropdown-menu a:after {
+    display: none; /* Remove underline effect for dropdown items */
+}
+
+.dropdown-menu a:hover:after {
+    display: none; /* Ensure no underline on hover */
+}
+
+/* Mobile Menu Adjustments */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 10px 0 0;
+        display: none;
+    }
+    
+    .has-dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu a {
+        padding: 8px 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: transparent;
+    }
+    
+    .has-dropdown > a:after {
+        margin-left: 6px;
+    }
+}
+
+/* Responsive visibility classes */
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: block;
+    }
+}
+
+/* Add a media query for the specific breakpoint where the button was breaking */
+@media (max-width: 950px) and (min-width: 769px) {
+    .main-nav ul {
+        gap: 1rem; /* Further reduce gap for this specific range */
+    }
+    
+    .main-nav a {
+        font-size: 0.95rem; /* Slightly smaller font for navbar items */
+    }
+}
+
+/* Social Icons in Nav */
+.social-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-nav a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-nav a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Override the underline effect for social nav */
+.social-nav a:after {
+    display: none;
+}
+
+/* Mobile social nav styling */
+@media (max-width: 768px) {
+    .mobile-menu-social {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .mobile-menu-social.social-nav a {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(214, 183, 91, 0.08);
+        border-radius: 50%;
+    }
+    
+    .mobile-menu-social.social-nav a:hover {
+        background-color: rgba(214, 183, 91, 0.15);
     }
 } 
