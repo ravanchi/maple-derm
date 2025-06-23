@@ -1,11 +1,12 @@
 /* Base Styles */
 :root {
-    --primary-color: #d4af37; /* Gold */
-    --secondary-color: #f8f3e6; /* Cream */
-    --accent-color: #b38728; /* Darker gold accent */
-    --text-color: #3a3a3a;
+    --primary-color: #d6b75b; /* Lighter, more elegant gold */
+    --secondary-color: #faf7f0; /* Lighter cream background */
+    --accent-color: #c09a3c; /* Refined gold accent */
+    --text-color: #454545; /* Slightly softer text color */
     --light-text: #ffffff;
-    --border-color: #efe5cf;
+    --border-color: #f1eadb; /* Lighter border color */
+    --bg-accent: #f5f0e6; /* Subtle accent background */
     --transition: all 0.3s ease;
 }
 
@@ -438,7 +439,7 @@ em {
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(212, 175, 55, 0.1);
+    background-color: rgba(214, 183, 91, 0.08);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -468,7 +469,7 @@ em {
 }
 
 .feature:hover .feature-icon:after {
-    background-color: rgba(212, 175, 55, 0.2);
+    background-color: rgba(214, 183, 91, 0.15);
 }
 
 /* Mobile scroll animation styles */
@@ -489,13 +490,13 @@ em {
     }
     
     .feature-active .feature-icon:after {
-        background-color: rgba(212, 175, 55, 0.2);
+        background-color: rgba(214, 183, 91, 0.15);
     }
 }
 
 /* Services Section */
 .services {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-accent);
     text-align: center;
 }
 
@@ -512,8 +513,15 @@ em {
     padding: 3rem 2rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
     transition: var(--transition);
+}
+
+.service-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
 }
 
 .service-card:hover {
@@ -532,12 +540,18 @@ em {
 }
 
 .testimonial {
-    background-color: var(--secondary-color);
+    background-color: #ffffff;
     padding: 2.5rem;
     border-radius: 8px;
     flex: 1;
     position: relative;
     border: 1px solid var(--border-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.stars {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .testimonial p {
@@ -560,9 +574,11 @@ em {
     opacity: 0.7;
 }
 
+
+
 /* CTA Section */
 .cta {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-accent);
     text-align: center;
     padding: 3rem 0;
 }
@@ -584,7 +600,7 @@ em {
 
 /* Footer */
 .site-footer {
-    background-color: #f8f5ee;
+    background-color: var(--secondary-color);
     color: var(--text-color);
     padding: 3rem 0;
     border-top: 1px solid var(--border-color);
@@ -655,6 +671,34 @@ em {
     margin-top: 0.5rem !important;
     font-size: 0.85rem !important;
     opacity: 0.7;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(214, 183, 91, 0.08);
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    opacity: 1;
+    background-color: rgba(214, 183, 91, 0.15);
+    transform: translateY(-2px);
 }
 
 .heart {
