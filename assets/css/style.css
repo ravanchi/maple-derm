@@ -315,12 +315,10 @@ em {
 
 /* Hero Section */
 .hero {
-    min-height: 65vh; /* Reduced from 75vh */
+    min-height: 65vh;
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 6rem 0 2rem; /* Reduced padding */
+    padding: 8rem 0 5rem;
     background-color: var(--secondary-color);
     margin-top: 0; /* Ensure no additional margin causes overlap */
 }
@@ -332,38 +330,44 @@ em {
     margin: 0 auto;
     padding-left: 20px; /* Match header left padding */
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Side-by-side layout on desktop */
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
 }
 
-/* Right side - Video container */
-.hero-video-container {
+/* Right side - Image container */
+.hero-image-container {
     flex: 1;
-    height: 380px; /* Reduced from 450px */
+    height: 420px;
     position: relative;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Video styling */
-.hero-video {
+/* Add subtle color overlay to the image */
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hero image styling */
+.hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    cursor: pointer; /* Indicates the video is clickable */
-    transition: filter 0.3s ease;
-    filter: brightness(1.25); /* Lighten by 15% */
-}
-
-/* Optional: subtle effect when hovering over the video */
-.hero-video:hover {
-}
-
-/* Hide video controls */
-.hero-video::-webkit-media-controls {
-    display: none !important;
+    cursor: default;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 0;
 }
 
 /* Left side - Hero content */
@@ -829,28 +833,29 @@ em {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 6rem 0 2rem; /* Less padding */
+        padding: 6rem 0 2rem;
     }
     
     .hero-container {
-        flex-direction: column-reverse; /* Stack with video on top, content below */
+        flex-direction: column-reverse; /* Stack with image on top, content below */
         gap: 2rem;
     }
     
-    .hero-video-container {
+    .hero-image-container {
         width: 100%;
-        height: 240px; /* Reduced from 270px */
+        height: 280px; /* Increased from 240px for a better view of the office image */
         border-radius: 10px; /* Explicitly maintain rounded corners on mobile */
         overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Add shadow to match desktop */
     }
     
-    /* Style for mobile hero video */
-    .hero-video {
-        border-radius: 10px; /* Matching container border radius */
+    /* Style for mobile hero image */
+    .hero-image {
+        border-radius: 10px;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(1.25); /* Matching desktop brightness */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     }
     
     .hero-content {
@@ -867,25 +872,51 @@ em {
     
     .main-nav {
         position: fixed;
-        top: 70px;
+        top: 85px;
         left: 0;
         width: 100%;
         background-color: var(--secondary-color);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.06);
-        padding: 1.5rem 0;
+        padding: 1rem 0 1.5rem;
         display: none;
         justify-content: center;
+        transition: top 0.3s ease, opacity 0.3s ease;
+        border-bottom: 1px solid var(--border-color);
+        opacity: 0;
+    }
+    
+    /* Add a subtle shadow at the bottom only */
+    .main-nav:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.04);
+        pointer-events: none;
+    }
+    
+    /* Add scrolled version with smaller top position */
+    .site-header.scrolled .main-nav {
+        top: 65px; /* Smaller top position when header is scrolled/collapsed */
     }
     
     .main-nav.active {
         display: block;
+        opacity: 1;
     }
     
     .main-nav ul {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
         align-items: center;
         width: 100%;
+        padding-top: 0.5rem;
+    }
+    
+    .main-nav a {
+        font-size: 1.05rem;
+        letter-spacing: 0.01em;
     }
     
     .mobile-menu-toggle {
@@ -977,8 +1008,9 @@ em {
     }
     
     .hero {
-        min-height: 60vh; /* Reduced height for mobile */
-        padding-top: 5.5rem; /* Reduced padding */
+        min-height: 60vh;
+        padding-top: 5.5rem;
+        padding-bottom: 2rem;
     }
     
     section {
@@ -989,15 +1021,24 @@ em {
         padding: 2.5rem 0;
     }
     
-    /* Additional mobile fixes */
-    .hero-video-container,
-    .hero-video {
-        border-radius: 8px; /* Slightly smaller radius on very small screens */
+    /* Clean up mobile styling */
+    .hero-image-container,
+    .hero-image {
+        border-radius: 8px;
     }
     
     /* Ensure footer logo doesn't get too small on very small screens */
     .footer-logo-img {
         height: 55px;
+    }
+    
+    /* Adjust mobile nav position for very small screens */
+    .main-nav {
+        top: 95px;
+    }
+    
+    .site-header.scrolled .main-nav {
+        top: 70px;
     }
 }
 
