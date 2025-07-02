@@ -90,6 +90,11 @@ section {
     padding: 5rem 0;
 }
 
+/* Reduce testimonials section padding */
+.testimonials {
+    padding: 1.5rem 0;
+}
+
 em {
     font-style: italic;
     color: var(--primary-color);
@@ -257,7 +262,7 @@ em {
     border-radius: 4px;
     font-weight: 500;
     transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); /* Enhanced glow */
+    box-shadow: none; /* Removed shadow */
     white-space: nowrap; /* Prevent text wrapping by default */
     height: 42px; /* Fixed height for consistency */
     display: flex; /* Use flex for centering */
@@ -268,7 +273,7 @@ em {
 .cta-button a:hover {
     background-color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(179, 135, 40, 0.4);
+    box-shadow: none;
 }
 
 /* Override the underline effect for the CTA button */
@@ -428,13 +433,14 @@ em {
 .intro {
     text-align: center;
     background-color: #fff;
+    padding: 3.5rem 0;
 }
 
 .features {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .feature {
@@ -526,13 +532,14 @@ em {
 .services {
     background-color: var(--bg-accent);
     text-align: center;
+    padding: 3rem 0;
 }
 
 .service-cards {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 .service-card {
@@ -559,42 +566,48 @@ em {
 
 /* Testimonials Section */
 .testimonials {
-    background-color: #fff;
+    background-color: var(--bg-accent);
 }
 
 .testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-slider-container {
     display: flex;
-    gap: 2rem;
+    transition: transform 0.5s ease;
 }
 
 .testimonial {
-    background-color: #ffffff;
+    flex: 0 0 100%;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 2.5rem;
     border-radius: 8px;
-    flex: 1;
-    position: relative;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
 .stars {
-    margin-bottom: 1rem;
     color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .testimonial p {
-    font-style: italic;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
+    font-style: italic;
 }
 
 .client {
-    display: flex;
-    flex-direction: column;
+    font-weight: 500;
 }
 
 .name {
-    font-weight: 600;
+    color: #888888;
+    font-weight: 500;
 }
 
 .treatment {
@@ -602,11 +615,47 @@ em {
     opacity: 0.7;
 }
 
+/* Slider Navigation Dots */
+.slider-dots {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    gap: 12px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.slider-dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Testimonial slider responsiveness */
+@media (max-width: 768px) {
+    .testimonial {
+        padding: 2rem 1.5rem;
+    }
+    
+    .testimonial p {
+        font-size: 1rem;
+    }
+}
+
 /* CTA Section */
 .cta {
     background-color: var(--bg-accent);
     text-align: center;
-    padding: 3rem 0;
+    padding: 1.5rem 0;
 }
 
 .cta h2 {

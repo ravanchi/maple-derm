@@ -112,6 +112,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Testimonial Slider with Dot Navigation
+    const initTestimonialSlider = () => {
+        const sliderContainer = document.querySelector('.testimonial-slider-container');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        if (!sliderContainer || !dots.length) return;
+        
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentIndex = 0;
+        
+        // Function to go to a specific slide
+        const goToSlide = (index) => {
+            if (index < 0) index = testimonials.length - 1;
+            if (index >= testimonials.length) index = 0;
+            
+            currentIndex = index;
+            sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        };
+        
+        // Setup dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Auto-advance slides every 5 seconds
+        let slideInterval = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 5000);
+        
+        // Pause auto-advance on hover
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        // Resume auto-advance when mouse leaves
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
+        });
+        
+        // Set initial slide
+        goToSlide(0);
+    };
+    
+    // Initialize the testimonial slider
+    initTestimonialSlider();
+    
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
