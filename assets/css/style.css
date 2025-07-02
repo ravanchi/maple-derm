@@ -699,15 +699,16 @@ em {
 
 /* End of main styles */
 
-.cta .btn {
+.footer-cta .btn {
     margin-bottom: var(--space-xs);
 }
 
 /* Adding a specific style for the CTA section paragraph */
-.cta p {
+.footer-cta p {
     margin-bottom: 0;
     font-size: 0.95rem;
     line-height: 1.5;
+    opacity: 0.8;
 }
 
 /* Base footer styles */
@@ -919,7 +920,7 @@ em {
     
     .hero {
         padding-top: calc(var(--space-md) + 65px); /* Account for smaller nav on mobile */
-        padding-bottom: var(--space-sm);
+        padding-bottom: var(--space-md); /* Increased bottom padding for consistent spacing */
     }
     
     .hero-container {
@@ -936,12 +937,13 @@ em {
         padding: var(--space-xs) 0;
     }
     
-    .cta {
+    .site-footer {
         padding: var(--space-sm) 0;
     }
     
-    .site-footer {
-        padding: var(--space-sm) 0;
+    .footer-cta {
+        padding: var(--space-sm) 0 var(--space-md);
+        margin-bottom: var(--space-sm);
     }
     
     .hero-image-container {
@@ -950,6 +952,7 @@ em {
         border-radius: 10px; /* Explicitly maintain rounded corners on mobile */
         overflow: hidden;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Add shadow to match desktop */
+        margin-bottom: var(--space-sm); /* Add space after the image */
     }
     
     /* Style for mobile hero image */
@@ -964,6 +967,8 @@ em {
     .hero-content {
         text-align: center;
         padding: 0;
+        padding-top: var(--space-sm); /* Add space after image */
+        padding-bottom: var(--space-xs); /* Add space before next section */
         max-width: 100%;
     }
     
@@ -971,6 +976,11 @@ em {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: var(--space-md); /* Increase space before button */
+    }
+    
+    .hero-content .btn {
+        margin-bottom: var(--space-sm); /* Add space after the button */
     }
     
     .main-nav {
@@ -1156,15 +1166,16 @@ em {
     .hero {
         min-height: 60vh;
         padding-top: calc(var(--space-md) + 65px);
-        padding-bottom: var(--space-xs);
+        padding-bottom: var(--space-md); /* Consistent with larger mobile */
     }
     
     section {
         padding: var(--space-sm) 0;
     }
     
-    .cta {
-        padding: var(--space-sm) 0;
+    .footer-cta {
+        padding: var(--space-sm) 0 var(--space-md);
+        margin-bottom: var(--space-sm);
     }
     
     /* Clean up mobile styling */
@@ -1353,16 +1364,18 @@ section h2 {
     margin-right: auto;
 }
 
-/* CTA Section */
-.cta {
-    background-color: var(--bg-accent);
+/* Footer CTA Section (merged with footer) */
+.footer-cta {
     text-align: center;
-    padding: var(--space-md) 0;
+    padding: var(--space-md) 0 calc(var(--space-md) * 1.5);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--space-md);
 }
 
-.cta h2 {
+.footer-cta h2 {
     margin-bottom: var(--space-sm);
     font-size: 2.2rem;
+    color: var(--text-color);
 }
 
 /* About Page Styles */
@@ -1452,7 +1465,7 @@ section h2 {
 
 /* Team Section */
 .team {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-accent);
     padding: var(--section-padding) 0;
 }
 
