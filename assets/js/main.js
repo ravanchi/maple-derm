@@ -112,56 +112,104 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Testimonial Slider with Dot Navigation
+    // Testimonial Slider with Dot Navigation - In-place content swap
     const initTestimonialSlider = () => {
-        const sliderContainer = document.querySelector('.testimonial-slider-container');
+        const testimonialContent = document.querySelector('.testimonial-content');
         const dots = document.querySelectorAll('.slider-dot');
         
-        if (!sliderContainer || !dots.length) return;
+        if (!testimonialContent || !dots.length) return;
         
-        const testimonials = document.querySelectorAll('.testimonial');
+        // Define all testimonial data
+        const testimonialData = [
+            {
+                stars: 5,
+                text: '"Dr. Ghiasi is an exceptionally professional and knowledgeable dermatologist. She takes the time to listen to her patients\' concerns and questions. I visited her for a dermatological condition and couldn\'t be more satisfied."',
+                name: 'Patient Testimonial'
+            },
+            {
+                stars: 5,
+                text: '"Dr. Nazli Ghiasi is a knowledgeable, compassionate, and dedicated dermatologist. She provides thorough care, explains treatments clearly, and ensures patients feel comfortable. Her professionalism and kindness make every visit a positive experience. Highly recommend!"',
+                name: 'Patient Testimonial'
+            }
+        ];
+        
         let currentIndex = 0;
         
         // Function to go to a specific slide
         const goToSlide = (index) => {
-            if (index < 0) index = testimonials.length - 1;
-            if (index >= testimonials.length) index = 0;
+            if (index < 0) index = testimonialData.length - 1;
+            if (index >= testimonialData.length) index = 0;
             
-            currentIndex = index;
-            sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            // Fade out
+            testimonialContent.style.opacity = 0;
             
-            // Update dots
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-            });
+            // Wait for fade out to complete before changing content
+            setTimeout(() => {
+                // Update content
+                currentIndex = index;
+                const data = testimonialData[currentIndex];
+                
+                // Update text
+                document.querySelector('.testimonial-text').textContent = data.text;
+                document.querySelector('.name').textContent = data.name;
+                
+                // Fade back in
+                testimonialContent.style.opacity = 1;
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }, 500);
+        };
+        
+        // Variable for tracking the interval
+        let slideInterval;
+        
+        // Function to reset auto-slide timer
+        const resetSlideTimer = () => {
+            // Clear any existing interval first
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+            
+            // Set a new interval
+            slideInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
         };
         
         // Setup dot click handlers
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
+                // Skip if clicking on the active dot
+                if (currentIndex === index) {
+                    return;
+                }
+                
                 goToSlide(index);
+                resetSlideTimer(); // Reset the timer when user manually changes slides
             });
         });
         
-        // Auto-advance slides every 5 seconds
-        let slideInterval = setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 5000);
+        // Start the auto-advance timer
+        resetSlideTimer();
         
         // Pause auto-advance on hover
-        sliderContainer.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
+        testimonialContent.addEventListener('mouseenter', () => {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+                slideInterval = null;
+            }
         });
         
         // Resume auto-advance when mouse leaves
-        sliderContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(() => {
-                goToSlide(currentIndex + 1);
-            }, 5000);
+        testimonialContent.addEventListener('mouseleave', () => {
+            resetSlideTimer();
         });
         
         // Set initial slide
-        goToSlide(0);
+        // No need to call goToSlide(0) since the first testimonial is already in the HTML
     };
     
     // Initialize the testimonial slider
