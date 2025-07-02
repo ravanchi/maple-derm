@@ -724,7 +724,7 @@ em {
 .site-footer {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    padding: var(--space-md) 0;
+    padding: var(--space-sm) 0 var(--space-md) 0;
     border-top: 1px solid var(--border-color);
 }
 
@@ -754,7 +754,6 @@ em {
 /* Address section */
 .footer-address {
     flex: 1;
-    padding-left: var(--space-sm);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1377,7 +1376,7 @@ section h2 {
 /* Footer CTA Section (merged with footer) */
 .footer-cta {
     text-align: center;
-    padding: var(--space-sm) 0 calc(var(--space-sm));
+    padding: var(--space-sm) 0 calc(var(--space-md));
     border-bottom: 1px solid var(--border-color);
     margin-bottom: var(--space-sm);
 }
