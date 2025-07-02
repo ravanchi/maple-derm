@@ -7,6 +7,16 @@
     --light-text: #ffffff;
     --border-color: #f1eadb; /* Lighter border color */
     --bg-accent: #f5f0e6; /* Subtle accent background */
+    
+    /* Typography */
+    --body-font: 'DM Sans', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+    --body-size: 1rem;
+    --body-line-height: 1.7;
+    --heading-line-height: 1.3;
+    --letter-spacing: -0.01em;
+    
+    /* Transitions */
     --transition: all 0.3s ease;
 }
 
@@ -34,21 +44,25 @@ body.is-mobile .mobile-only {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: var(--body-line-height);
+    font-size: var(--body-size);
+    font-weight: 400;
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
     font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 1rem;
+    line-height: var(--heading-line-height);
+    margin-bottom: 1.2rem;
+    letter-spacing: var(--letter-spacing);
 }
 
 h1 {
     font-size: 3.2rem;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 h2 {
@@ -58,7 +72,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 h4 {
@@ -67,6 +82,7 @@ h4 {
 
 p {
     margin-bottom: 1.5rem;
+    font-weight: 300;
 }
 
 a {
@@ -96,9 +112,10 @@ section {
 }
 
 em {
+    font-family: var(--heading-font);
     font-style: italic;
     color: var(--primary-color);
-    font-weight: inherit; /* Ensure em doesn't add extra boldness */
+    font-weight: 400;
 }
 
 /* Buttons */
@@ -106,15 +123,16 @@ em {
     display: inline-block;
     padding: 12px 24px;
     font-weight: 500;
-    border-radius: 4px;
+    border-radius: 3px;
     transition: var(--transition);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
 }
 
 .primary-btn {
     background-color: var(--primary-color);
     color: var(--light-text);
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-weight: 500;
     padding: 14px 28px; /* Larger padding for main CTA buttons */
 }
 
@@ -129,6 +147,7 @@ em {
     font-weight: 500;
     position: relative;
     display: inline-block;
+    font-size: 0.95rem;
 }
 
 .text-link:after {
@@ -136,7 +155,7 @@ em {
     position: absolute;
     width: 100%;
     height: 1px;
-    bottom: -2px;
+    bottom: -1px;
     left: 0;
     background-color: var(--primary-color);
     transform: scaleX(0);
@@ -222,9 +241,11 @@ em {
 
 .main-nav a {
     position: relative;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-color);
     transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
 }
 
 /* Adjust text color when scrolled for better contrast */
@@ -381,18 +402,18 @@ em {
 
 .hero-subtitle {
     font-size: 1.1rem;
-    margin-bottom: 2rem; /* Reduced from 2.5rem */
-    opacity: 0.8;
-    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    line-height: var(--body-line-height);
     max-width: 540px;
+    font-weight: 300;
 }
 
 .hero-content h1 {
-    margin-bottom: 1.5rem; /* Reduced from 1.8rem */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    letter-spacing: 0.01em;
-    line-height: 1.35;
-    font-weight: 300; /* Ensure we're using the lighter font weight */
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    font-weight: 500;
 }
 
 .hero-content h1 em {
@@ -480,13 +501,15 @@ em {
 
 .feature h3 {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .feature p {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: var(--body-line-height);
     color: var(--text-color);
     opacity: 0.85;
+    font-weight: 300;
 }
 
 .feature:hover {
@@ -564,6 +587,20 @@ em {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Update service cards */
+.service-card h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    line-height: var(--body-line-height);
+    opacity: 0.85;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+}
+
 /* Testimonials Section */
 .testimonials {
     background-color: var(--bg-accent);
@@ -599,6 +636,10 @@ em {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     font-style: italic;
+    font-family: var(--heading-font);
+    line-height: 1.6;
+    font-weight: 400;
+    opacity: 0.9;
 }
 
 .client {
@@ -607,7 +648,8 @@ em {
 
 .name {
     color: #888888;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 .treatment {
@@ -658,7 +700,8 @@ em {
 }
 
 .cta h2 {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.8rem;
+    font-size: 2.2rem;
 }
 
 .cta .btn {
@@ -705,9 +748,10 @@ em {
     color: var(--text-color);
     opacity: 0.8;
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: var(--body-line-height);
     margin-bottom: 0;
     text-align: left;
+    font-weight: 300;
 }
 
 .footer-address a {
@@ -725,11 +769,10 @@ em {
 }
 
 .footer-legal p {
-    color: var(--text-color);
-    opacity: 0.8;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin: 0 0 0.3rem 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    font-weight: 300;
 }
 
 .footer-legal a {
@@ -785,10 +828,12 @@ em {
 @media (max-width: 1024px) {
     h1 {
         font-size: 2.8rem;
+        line-height: 1.2;
     }
     
     h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        line-height: 1.3;
     }
 }
 
@@ -952,11 +997,21 @@ em {
     }
     
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
+        line-height: 1.2;
     }
     
     h2 {
         font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
     .features, 
@@ -1011,10 +1066,20 @@ em {
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
+        line-height: 1.2;
     }
     
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .testimonial p {
+        font-size: 1rem;
     }
     
     .hero {
@@ -1202,4 +1267,29 @@ em {
     .mobile-menu-social.social-nav a:hover {
         background-color: rgba(214, 183, 91, 0.15);
     }
+}
+
+/* Add elegant spacing for section headings */
+section h2 {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.services h2, 
+.intro h2 {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Section */
+.cta {
+    background-color: var(--bg-accent);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.cta h2 {
+    margin-bottom: 1.8rem;
+    font-size: 2.2rem;
 } 
