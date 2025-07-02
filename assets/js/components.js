@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Load the components from their respective files
         injectHeaderComponent();
         injectFooterComponent();
+
     }
     
     // Try to inject components immediately

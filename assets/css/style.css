@@ -213,7 +213,7 @@ em {
     max-width: 1400px; /* Match the hero container width */
     margin: 0 auto;
     position: relative;
-    padding: 0 0 0 var(--space-sm); /* Keep left padding, remove right padding */
+    padding: 0;
 }
 
 .logo {
@@ -491,7 +491,6 @@ em {
 .feature-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: var(--space-sm);
     display: inline-block;
     position: relative;
     transition: transform 0.3s ease;
@@ -570,6 +569,17 @@ em {
     padding: var(--section-padding) 0;
 }
 
+/* Combined services and testimonials section */
+.services-testimonials {
+    background-color: var(--bg-accent);
+    text-align: center;
+    padding: var(--section-padding) 0;
+}
+
+.services-testimonials .testimonial-slider {
+    margin-top: var(--space-md);
+}
+
 .service-cards {
     display: flex;
     justify-content: space-between;
@@ -590,7 +600,6 @@ em {
 .service-icon {
     font-size: 2.2rem;
     color: var(--primary-color);
-    margin-bottom: var(--space-sm);
     opacity: 0.9;
 }
 
@@ -933,7 +942,8 @@ em {
         gap: var(--space-sm);
     }
     
-    .testimonials {
+    .testimonials,
+    .services-testimonials .testimonial-slider {
         padding: var(--space-xs) 0;
     }
     
@@ -1098,7 +1108,6 @@ em {
     
     .feature-icon {
         font-size: 2.2rem;
-        margin-bottom: 1.2rem;
     }
     
     .footer-logo,
@@ -1358,7 +1367,8 @@ section h2 {
 }
 
 .services h2, 
-.intro h2 {
+.intro h2,
+.services-testimonials h2 {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -1367,9 +1377,9 @@ section h2 {
 /* Footer CTA Section (merged with footer) */
 .footer-cta {
     text-align: center;
-    padding: var(--space-md) 0 calc(var(--space-md) * 1.5);
+    padding: var(--space-sm) 0 calc(var(--space-sm));
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
 }
 
 .footer-cta h2 {
