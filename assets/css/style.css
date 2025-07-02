@@ -1372,3 +1372,211 @@ section h2 {
     font-size: 2.2rem;
 }
 
+/* About Page Styles */
+.about-hero {
+    background-color: var(--secondary-color);
+    padding: calc(var(--section-padding) * 1.5) 0 var(--section-padding);
+    text-align: center;
+    margin-top: 70px; /* To account for fixed header */
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Founding Doctor Section */
+.founding-doctor {
+    padding: var(--section-padding) 0;
+    background-color: #fff;
+}
+
+.doctor-profile {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.doctor-image {
+    flex: 0 0 40%;
+}
+
+.doctor-photo {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.doctor-info {
+    flex: 0 0 60%;
+}
+
+.doctor-info h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.doctor-info h3 {
+    font-family: var(--body-font);
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.doctor-credentials {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.credential {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.credential i {
+    color: var(--primary-color);
+    width: 20px; /* Fixed width for icons */
+    text-align: center; /* Center the icon in its fixed width */
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.credential span {
+    font-weight: 400;
+    padding-top: 2px; /* Slight padding to align with icon */
+}
+
+/* Team Section */
+.team {
+    background-color: var(--secondary-color);
+    padding: var(--section-padding) 0;
+}
+
+.team h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.team-member {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Fixed width for image column */
+    align-items: center; /* Changed to center for vertical alignment */
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 3rem;
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.team-member-image {
+    width: 220px; /* Slightly smaller to allow for padding */
+    height: 270px; /* Slightly smaller to allow for padding */
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Added for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: var(--bg-accent); /* Background color for image container */
+    margin: 15px; /* Add margin around the image container */
+    border-radius: 10px; /* Match the border radius of the photo */
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the container properly */
+    object-position: center; /* Center the image */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for image */
+    transition: transform 0.5s ease; /* Add transition for hover effect */
+}
+
+.team-member:hover .team-photo {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.team-member-info {
+    padding: 2rem;
+    align-self: center; /* Center vertically */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.team-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive styles for About page */
+@media (max-width: 1024px) {
+    .doctor-profile {
+        gap: var(--space-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        margin-top: 60px;
+        padding: var(--section-padding) 0 calc(var(--section-padding) * 0.7);
+    }
+    
+    .doctor-profile {
+        flex-direction: column;
+    }
+    
+    .doctor-image,
+    .doctor-info {
+        flex: 0 0 100%;
+    }
+    
+    .doctor-image {
+        margin-bottom: var(--space-md);
+    }
+    
+    .doctor-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .team-member {
+        grid-template-columns: 1fr; /* Stack on mobile */
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 12px;
+    }
+    
+    .team-member-image {
+        width: calc(100% - 30px); /* Full width minus margins */
+        height: 320px; /* Slightly taller on mobile */
+        margin: 15px 15px 0 15px; /* Keep margin on sides and top */
+        border-radius: 10px;
+    }
+    
+    .team-photo {
+        border-radius: 10px; /* Keep consistent border radius */
+    }
+}
+
