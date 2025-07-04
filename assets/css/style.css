@@ -1211,6 +1211,23 @@ em {
         top: 60px;
         background-color: rgba(255, 255, 255, 0.98); /* Maintain consistency with larger screens */
     }
+    
+    .steps-grid {
+        gap: var(--space-sm);
+        padding: 0 var(--space-xs);
+    }
+    
+    .step {
+        padding: var(--space-sm);
+    }
+    
+    .step h3 {
+        font-size: 1.2rem;
+    }
+    
+    .step p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Dropdown Menu Styles */
@@ -1835,10 +1852,34 @@ section h2 {
         padding: calc(var(--section-padding-mobile) + 3.5rem) 0 var(--space-md);
     }
     
-    .contact-grid, 
-    .steps-grid {
+    .contact-grid {
         flex-direction: column;
         gap: 1.5rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .step {
+        padding: var(--space-md) var(--space-sm);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        background-color: #fff;
+        transition: var(--transition);
+    }
+    
+    .step:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .step p {
+        max-width: 100%;
+        margin-bottom: 0;
     }
     
     .contact-card {
