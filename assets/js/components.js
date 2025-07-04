@@ -42,7 +42,7 @@ function injectHeaderComponent() {
                     <li class="mobile-only"><a href="#maintenance">Maintenance</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li class="cta-button"><a href="#contact">Book an Appointment</a></li>
+                    <li class="cta-button"><a href="book-appointment.html">Book an Appointment</a></li>
                     <li class="social-nav mobile-menu-social">
                         <a href="https://www.instagram.com/maplederm/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@maplederm" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -80,7 +80,7 @@ function injectFooterComponent() {
             <!-- CTA Section integrated into footer -->
             <div class="footer-cta">
                 <h2>Begin your path to <em>expert-led</em> skin health</h2>
-                <a href="#" class="btn primary-btn">Book an Appointment →</a>
+                <a href="book-appointment.html" class="btn primary-btn">Book an Appointment →</a>
                 <p>Still have questions?<br>Take a look through our <a href="#faq" class="text-link no-underline">FAQ</a></p>
             </div>
             
