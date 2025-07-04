@@ -1215,10 +1215,16 @@ em {
     .steps-grid {
         gap: var(--space-sm);
         padding: 0 var(--space-xs);
+        max-width: 100%;
     }
     
     .step {
         padding: var(--space-sm);
+        margin-bottom: var(--space-xs);
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .step h3 {
@@ -1728,6 +1734,11 @@ section h2 {
     min-width: 145px;
 }
 
+/* Special styling for the hours contact card */
+.contact-card:nth-child(2) {
+    min-width: 280px;
+}
+
 .map-section {
     background-color: var(--bg-accent);
     padding: var(--space-md) 0 var(--space-lg);
@@ -1858,7 +1869,8 @@ section h2 {
     }
     
     .steps-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--space-md);
         max-width: 450px;
         margin: 0 auto;
@@ -1870,6 +1882,7 @@ section h2 {
         border-radius: 8px;
         background-color: #fff;
         transition: var(--transition);
+        width: 100%;
     }
     
     .step:hover {
@@ -1935,6 +1948,39 @@ section h2 {
         min-width: auto;
         margin-bottom: 0.2rem;
     }
+    
+    /* Ensure hours card gets priority */
+    .contact-card:nth-child(2) {
+        min-width: unset;
+        width: 100%;
+        max-width: 320px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .hours-list {
+        margin: 0 auto;
+        max-width: 280px;
+        width: 100%;
+    }
+    
+    .hours-list li {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+    
+    .hours-list li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .hours-list span {
+        min-width: 130px;
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1952,6 +1998,23 @@ section h2 {
     
     .contact-card h3 {
         font-size: 1.3rem;
+    }
+    
+    .contact-card:nth-child(2) {
+        padding: 1.5rem 1rem;
+        max-width: 300px;
+    }
+    
+    .hours-list {
+        max-width: 250px;
+    }
+    
+    .hours-list li {
+        font-size: 0.85rem;
+    }
+    
+    .hours-list span {
+        min-width: 125px;
     }
 }
 
