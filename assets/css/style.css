@@ -788,9 +788,13 @@ em {
 .footer-address a,
 .footer-legal a {
     color: var(--primary-color);
-    font-weight: 400;
-    text-decoration: none;
     transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-address .address-link {
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 .footer-address a:hover,
@@ -1617,9 +1621,9 @@ section h2 {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-md);
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
