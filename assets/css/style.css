@@ -1602,14 +1602,14 @@ section h2 {
 /* Booking Page Styles */
 .book-hero {
     background-color: var(--secondary-color);
-    padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding-mobile);
+    padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding);
     text-align: center;
 }
 
 .book-subtitle {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: var(--text-color);
     line-height: 1.6;
 }
@@ -1758,7 +1758,7 @@ section h2 {
 }
 
 .booking-steps {
-    padding: var(--space-md) 0;
+    padding: 0 0 var(--space-md) 0;
     background-color: var(--light-text);
 }
 
