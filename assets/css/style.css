@@ -1617,49 +1617,73 @@ section h2 {
 .contact-info {
     background-color: var(--light-text);
     padding: var(--space-md) 0;
+    text-align: center;
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
-    max-width: 1100px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-sm);
 }
 
 .contact-card {
-    background-color: var(--secondary-color);
+    flex: 1;
+    padding: var(--space-sm);
     border-radius: 8px;
-    padding: var(--space-md) var(--space-sm);
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: var(--transition);
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .contact-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.contact-icon:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: background-color 0.3s ease;
 }
 
 .contact-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: var(--space-sm);
-    color: var(--text-color);
+    margin-bottom: var(--space-xs);
+    font-size: 1.5rem;
 }
 
 .contact-card p {
+    font-size: 0.95rem;
+    line-height: var(--body-line-height);
+    color: var(--text-color);
+    opacity: 0.85;
+    font-weight: 300;
     margin-bottom: var(--space-xs);
-    line-height: 1.5;
 }
 
 .contact-card a {
     color: var(--primary-color);
     font-weight: 500;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
 }
 
 .hours-list {
@@ -1675,6 +1699,11 @@ section h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--text-color);
+    opacity: 0.85;
+    font-weight: 300;
 }
 
 .hours-list span {
@@ -1808,13 +1837,14 @@ section h2 {
     
     .contact-grid, 
     .steps-grid {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-        gap: var(--space-md);
+        flex-direction: column;
+        gap: 1.5rem;
     }
     
     .contact-card {
-        padding: var(--space-md) var(--space-sm);
+        padding: 1.5rem;
+        max-width: 500px;
+        margin: 0 auto;
     }
     
     .location-details {
@@ -1845,24 +1875,24 @@ section h2 {
     }
     
     .hours-list {
-        max-width: 100%;
+        margin: 0 auto;
+        max-width: 250px;
     }
     
     .hours-list li {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
         flex-direction: column;
-        align-items: flex-start;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        text-align: center;
     }
     
     .hours-list li:last-child {
-        border-bottom: none;
+        margin-bottom: 0;
     }
     
     .hours-list span {
-        margin-bottom: 0.25rem;
-        display: block;
-        font-weight: 600;
+        min-width: auto;
+        margin-bottom: 0.2rem;
     }
 }
 
