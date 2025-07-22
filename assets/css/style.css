@@ -2216,7 +2216,7 @@ section h2 {
 .instagram-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+    gap: 30px;
     margin-bottom: 30px;
 }
 
@@ -2229,7 +2229,7 @@ section h2 {
 
 .instagram-embed-container .instagram-media {
     width: 100% !important;
-    max-width: 540px !important;
+    max-width: 600px !important;
     margin: 0 !important;
 }
 
@@ -2241,7 +2241,7 @@ section h2 {
 
 @media (min-width: 992px) {
     .instagram-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
