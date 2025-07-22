@@ -2214,11 +2214,38 @@ section h2 {
 }
 
 .instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.instagram-embed-container {
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    aspect-ratio: 4/5; /* Taller aspect ratio for posts */
+    overflow: hidden;
+}
+
+.instagram-embed-container .instagram-media {
+    width: 100% !important;
+    min-width: unset !important;
+    max-height: none !important; /* Allow natural height */
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+@media (min-width: 576px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .instagram-item {
