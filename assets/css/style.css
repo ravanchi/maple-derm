@@ -2224,15 +2224,12 @@ section h2 {
     width: 100%;
     display: flex;
     justify-content: center;
-    aspect-ratio: 4/5; /* Taller aspect ratio for posts */
     overflow: hidden;
 }
 
 .instagram-embed-container .instagram-media {
     width: 100% !important;
-    min-width: unset !important;
-    max-height: none !important; /* Allow natural height */
-    height: 100% !important;
+    max-width: 540px !important;
     margin: 0 !important;
 }
 
