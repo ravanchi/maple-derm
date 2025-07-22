@@ -1386,18 +1386,20 @@ em {
     }
 }
 
-/* Add elegant spacing for section headings */
+/* Section Heading Styles - Consistent across website */
 section h2 {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     position: relative;
 }
 
+/* Specific section title styles that need larger margins */
 .services h2, 
 .intro h2,
 .services-testimonials h2 {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: var(--space-md);
 }
 
 /* Footer CTA Section (merged with footer) */
@@ -2015,6 +2017,303 @@ section h2 {
     
     .hours-list span {
         min-width: 125px;
+    }
+}
+
+/* Media Page Styles */
+.page-hero {
+    padding: 8rem 0 4rem;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.page-hero h1 {
+    margin-bottom: 1rem;
+}
+
+/* Gallery Styles */
+.media-gallery {
+    background-color: var(--light-text);
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--light-text);
+    padding: 1.5rem 1rem 1rem;
+    text-align: left;
+    font-weight: 400;
+}
+
+/* Generic Content Section */
+.content-section {
+    background-color: var(--bg-accent);
+    padding: var(--space-md) 0 var(--space-lg);
+}
+
+/* Using default section h2 margin defined above */
+
+.content-container {
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Featured Articles Styles */
+.featured-articles {
+    background-color: var(--bg-accent);
+    text-align: center;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.article-card {
+    background-color: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.article-content {
+    padding: 2rem;
+    text-align: left;
+}
+
+.article-source {
+    display: inline-block;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.article-content h3 {
+    margin-bottom: 1rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content .btn {
+    margin-top: 0.5rem;
+}
+
+/* Media Queries for Media Page */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 7rem 0 3rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.2rem;
+    }
+    
+    .gallery-item img {
+        height: 250px;
+    }
+    
+    .articles-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* Page Hero - Generic hero section for all pages */
+.page-hero {
+    background-color: var(--secondary-color);
+    padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding);
+    text-align: center;
+}
+
+.page-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Older hero styles - keeping for backward compatibility */
+.book-hero {
+    background-color: var(--secondary-color);
+    padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding);
+    text-align: center;
+}
+
+.book-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Instagram Feed Styles */
+.instagram-feed {
+    background-color: var(--light-text);
+    text-align: center;
+    padding: var(--section-padding) 0;
+}
+
+/* Using default section h2 margin defined above */
+.instagram-description {
+    max-width: 800px;
+    margin: 0 auto var(--space-md);
+    text-align: center;
+}
+
+.instagram-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.instagram-item {
+    position: relative;
+    width: calc(25% - 1.2rem);
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    aspect-ratio: 1/1;
+}
+
+.instagram-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.instagram-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.instagram-item:hover .overlay {
+    opacity: 1;
+}
+
+.instagram-item .overlay-content {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.instagram-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.instagram-follow {
+    margin-top: var(--space-md);
+}
+
+.instagram-follow a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.instagram-follow a:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .instagram-item {
+        width: calc(33.33% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-item {
+        width: calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-grid {
+        gap: 1rem;
+    }
+    
+    .instagram-item {
+        width: 100%;
+        max-width: 350px;
     }
 }
 

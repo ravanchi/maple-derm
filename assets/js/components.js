@@ -30,7 +30,7 @@ function injectHeaderComponent() {
             <nav class="main-nav">
                 <ul>
                     <li class="has-dropdown desktop-only">
-                        <a href="#services">Services</a>
+                        <a href="">Services</a>
                         <div class="dropdown-menu">
                             <a href="#medical">Medical</a>
                             <a href="#cosmetic">Cosmetic</a>
@@ -42,6 +42,7 @@ function injectHeaderComponent() {
                     <li class="mobile-only"><a href="#maintenance">Maintenance</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="media.html">Media</a></li>
                     <li class="cta-button"><a href="book-appointment.html">Book an Appointment</a></li>
                     <li class="social-nav mobile-menu-social">
                         <a href="https://www.instagram.com/maplederm/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
