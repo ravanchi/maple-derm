@@ -26,7 +26,7 @@
         
         <!-- New simple implementation with direct styling -->
         <div style="text-align:center; width:100%; max-width:1100px; margin:0 auto;">
-            <div id="instagram-post-wrapper" style="text-align:center; font-size:0;">
+            <div id="instagram-post-wrapper" style="text-align:center; font-size:0; margin-bottom:var(--space-sm);">
                 <!-- Instagram posts will be added here -->
             </div>
         </div>
@@ -85,8 +85,10 @@
     <div id="footer-placeholder"></div>
     
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/components.js"></script>
-    <script>
+    <script src="assets/js/components.js" type="module"></script>
+    <script type="module">
+        import { ComponentManager } from './assets/js/components/index.js';
+        
         // Initialize components after page load
         document.addEventListener('DOMContentLoaded', function() {
             // Create page hero component

@@ -1,13 +1,6 @@
-/**
- * UI Components Usage Examples
- * 
- * This file demonstrates how to use the component system to create reusable UI elements.
- */
+import { ComponentManager } from './components/index.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Examples of how to use the components
-    
-    // Example 1: Create a page hero programmatically
     const heroContainer = document.getElementById('custom-hero');
     if (heroContainer) {
         ComponentManager.components.hero.createPageHero(
@@ -17,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
     
-    // Example 2: Create a service card programmatically
     const serviceContainer = document.getElementById('custom-service');
     if (serviceContainer) {
         ComponentManager.components.featureCard.createServiceCard(
@@ -31,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
     
-    // Example 3: Create a testimonial programmatically
     const testimonialContainer = document.getElementById('custom-testimonial');
     if (testimonialContainer) {
         ComponentManager.components.testimonial.createTestimonial(
@@ -42,10 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
     
-    // Example 4: Create buttons programmatically
     const buttonContainer = document.getElementById('custom-button');
     if (buttonContainer) {
-        // Create primary button
         const primaryButtonDiv = document.createElement('div');
         buttonContainer.appendChild(primaryButtonDiv);
         ComponentManager.components.button.createButton(
@@ -55,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             true
         );
         
-        // Create secondary button
         const secondaryButtonDiv = document.createElement('div');
         buttonContainer.appendChild(secondaryButtonDiv);
         ComponentManager.components.button.createButton(
@@ -65,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             false
         );
         
-        // Create text link
         const textLinkDiv = document.createElement('div');
         buttonContainer.appendChild(textLinkDiv);
         ComponentManager.components.button.createTextLink(
@@ -75,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
     
-    // Example 5: Create a feature programmatically
     const featureContainer = document.getElementById('custom-feature');
     if (featureContainer) {
         ComponentManager.components.featureCard.createFeature(
@@ -86,30 +72,3 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 });
-
-/**
- * Example of how to extend the component system with a new component
- */
-const ExampleNewComponent = {
-    init: function() {
-        console.log('Example new component initialized');
-    },
-    
-    createExample: function(container, title, content) {
-        if (!container) return;
-        
-        const exampleHTML = `
-        <div class="example-component">
-            <h3>${title}</h3>
-            <div class="example-content">
-                ${content}
-            </div>
-        </div>
-        `;
-        
-        container.innerHTML = exampleHTML;
-    }
-};
-
-// Register the new component
-// ComponentManager.register('example', ExampleNewComponent); 

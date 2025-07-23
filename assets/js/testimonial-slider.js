@@ -34,11 +34,8 @@ const TestimonialSlider = {
         const dots = document.querySelectorAll('.slider-dot');
         
         if (!testimonialContent || !dots.length) {
-            console.log('Missing required elements for testimonial slider');
             return;
         }
-        
-        console.log('Testimonial slider initialized successfully');
         
         // Setup dot click handlers
         dots.forEach((dot, index) => {
