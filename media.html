@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media - MapleDerm</title>
     <meta name="description" content="MapleDerm Media Gallery and Featured Articles">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <script src="assets/js/shared-head.js"></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -23,16 +19,13 @@
                 <p>Connect with us on social media for the latest updates, a glimpse into our state-of-the-art facility, treatment approaches, and skincare tips from our expert team.</p>
             </div>
         </div>
-        
-        <!-- New simple implementation with direct styling -->
+
         <div style="text-align:center; width:100%; max-width:1100px; margin:0 auto;">
             <div id="instagram-post-wrapper" style="text-align:center; font-size:0; margin-bottom:var(--space-sm);">
-                <!-- Instagram posts will be added here -->
             </div>
         </div>
         
         <div class="container" id="instagram-profile-btn-container">
-            <!-- View Instagram profile button will be added here -->
         </div>
     </section>
 
@@ -89,9 +82,8 @@
     <script type="module">
         import { ComponentManager } from './assets/js/components/index.js';
         
-        // Initialize components after page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Create page hero component
+
             const heroContainer = document.getElementById('page-hero-container');
             if (heroContainer) {
                 ComponentManager.components.hero.createPageHero(
@@ -101,7 +93,6 @@
                 );
             }
             
-            // Instagram posts data
             const instagramPosts = [
                 {
                     profileImage: 'assets/images/logo2.svg',
@@ -125,11 +116,9 @@
                     hasVideo: false
                 }
             ];
-            
-            // Create Instagram posts
+
             const postsWrapper = document.getElementById('instagram-post-wrapper');
             if (postsWrapper) {
-                // Add posts to the wrapper
                 instagramPosts.forEach(post => {
                     const postContainer = document.createElement('div');
                     postContainer.style.display = 'inline-block';
@@ -150,7 +139,6 @@
                 });
             }
             
-            // Create View Instagram Profile button
             const profileBtnContainer = document.getElementById('instagram-profile-btn-container');
             if (profileBtnContainer) {
                 ComponentManager.components.socialMedia.createViewProfileButton(

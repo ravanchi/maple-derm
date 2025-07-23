@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MapleDerm - Modern Dermatology Care</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/shared-head.js"></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <!-- Hero section will remain static - it has specialized structure -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -30,9 +25,8 @@
 
     <section class="intro">
         <div class="container">
-            <h2>From diagnosis to rejuvenation, we provide personalized dermatology backed by clinical precision.</h2>
+            <h2>From diagnosis to rejuvenation, we provide <em>personalized</em> dermatology backed by clinical precision.</h2>
             <div class="features" id="intro-features">
-                <!-- Features will be populated using component system -->
             </div>
             <div id="about-link-container"></div>
         </div>
@@ -40,9 +34,8 @@
 
     <section class="services-testimonials" id="services">
         <div class="container">
-            <h2>Discover our comprehensive dermatology services</h2>
+            <h2>Discover our <em>comprehensive</em> dermatology services</h2>
             <div class="service-cards" id="service-cards">
-                <!-- Service cards will be populated using component system -->
             </div>
             
             <div class="testimonial-slider">
@@ -75,10 +68,8 @@
     <script src="assets/js/components.js" type="module"></script>
     <script type="module">
         import { ComponentManager } from './assets/js/components/index.js';
-        
-        // Initialize components after page load
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Create intro features using component system
             const introFeatures = [
                 {
                     icon: 'fas fa-hand-holding-heart',
@@ -99,10 +90,8 @@
             
             const featuresContainer = document.getElementById('intro-features');
             if (featuresContainer) {
-                // Clear container
                 featuresContainer.innerHTML = '';
-                
-                // Create features with equal width wrappers
+
                 introFeatures.forEach(feature => {
                     const featureWrapper = document.createElement('div');
                     featureWrapper.style.flex = '1';
@@ -117,8 +106,7 @@
                     );
                 });
             }
-            
-            // Create "Learn more about us" link using component system
+
             const aboutLinkContainer = document.getElementById('about-link-container');
             if (aboutLinkContainer) {
                 ComponentManager.components.button.createTextLink(
@@ -127,8 +115,7 @@
                     'about.html'
                 );
             }
-            
-            // Create service cards using component system
+
             const serviceCardsData = [
                 {
                     id: 'medical',
@@ -158,10 +145,8 @@
             
             const serviceCardsContainer = document.getElementById('service-cards');
             if (serviceCardsContainer) {
-                // Clear container
                 serviceCardsContainer.innerHTML = '';
-                
-                // Create service cards using component system
+
                 serviceCardsData.forEach(service => {
                     const serviceCardEl = document.createElement('div');
                     serviceCardEl.style.flex = '1';
