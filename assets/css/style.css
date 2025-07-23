@@ -1,22 +1,19 @@
-/* Base Styles */
 :root {
-    --primary-color: #d6b75b; /* Lighter, more elegant gold */
-    --secondary-color: #faf7f0; /* Lighter cream background */
-    --accent-color: #c09a3c; /* Refined gold accent */
-    --text-color: #454545; /* Slightly softer text color */
+    --primary-color: #d6b75b; 
+    --secondary-color: #faf7f0;
+    --accent-color: #c09a3c;
+    --text-color: #454545; 
     --light-text: #ffffff;
-    --border-color: #f1eadb; /* Lighter border color */
-    --bg-accent: #f5f0e6; /* Subtle accent background */
-    
-    /* Typography */
+    --border-color: #f1eadb;
+    --bg-accent: #f5f0e6;
+
     --body-font: 'DM Sans', sans-serif;
     --heading-font: 'Playfair Display', serif;
     --body-size: 1rem;
     --body-line-height: 1.7;
     --heading-line-height: 1.3;
     --letter-spacing: -0.01em;
-    
-    /* Spacing System */
+
     --space-xs: 0.8rem;
     --space-sm: 1.5rem;
     --space-md: 3rem;
@@ -24,8 +21,7 @@
     --space-xl: 6rem;
     --section-padding: 4.5rem;
     --section-padding-mobile: 3rem;
-    
-    /* Transitions */
+
     --transition: all 0.3s ease;
 }
 /* Device type classes */
@@ -98,7 +94,6 @@ ul {
 section {
     padding: var(--section-padding) 0;
 }
-/* Reduce testimonials section padding */
 .testimonials {
     padding: var(--space-sm) 0;
     background-color: var(--bg-accent);
@@ -109,7 +104,6 @@ em {
     color: var(--primary-color);
     font-weight: 400;
 }
-/* Buttons */
 .btn {
     display: inline-flex;
     padding: 8px 24px;
@@ -158,11 +152,9 @@ em {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-/* Special link class for FAQ - no underline on hover */
 .text-link.no-underline:after {
     display: none;
 }
-/* Header */
 .site-header {
     position: fixed;
     top: 0;
@@ -187,7 +179,7 @@ em {
     justify-content: flex-start;
     align-items: center;
     width: 90%;
-    max-width: 1400px; /* Match the hero container width */
+    max-width: 1400px; 
     margin: 0 auto;
     position: relative;
     padding: 0;
@@ -205,9 +197,8 @@ em {
     width: auto;
     transition: all 0.3s ease;
 }
-/* Adjust logo styling when scrolled */
 .scrolled .logo-img {
-    height: 48px; /* Scale down on scroll */
+    height: 48px;
 }
 .main-nav {
     flex-grow: 1;
@@ -228,11 +219,9 @@ em {
     font-size: 0.95rem;
     letter-spacing: 0.01em;
 }
-/* Adjust text color when scrolled for better contrast */
 .scrolled .main-nav a {
     color: var(--text-color);
 }
-/* Ensure CTA button text stays white when scrolled */
 .scrolled .cta-button a {
     color: var(--light-text);
 }
@@ -304,7 +293,7 @@ em {
 }
 /* Hero Section */
 .hero {
-    min-height: 65vh;
+    min-height: 60vh;
     position: relative;
     overflow: hidden;
     padding-top: calc(var(--space-lg) + 40px); 
@@ -425,11 +414,10 @@ em {
     font-weight: 300;
 }
 .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 .feature:hover .feature-icon {
-    transform: scale(1.1);
+    transform: none;
 }
 @media (max-width: 768px) {
     .feature {
@@ -486,8 +474,7 @@ em {
     opacity: 0.9;
 }
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 .service-card h3 {
     margin-bottom: var(--space-xs);
@@ -1266,7 +1253,7 @@ section h2 {
 }
 .team {
     background-color: var(--bg-accent);
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 var(--space-sm) 0;
 }
 .team h2 {
     text-align: center;
@@ -1284,8 +1271,10 @@ section h2 {
     transition: var(--transition);
 }
 .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: none;
+}
+.team-member:hover .team-photo {
+    transform: none;
 }
 .team-member-image {
     width: 220px; 
@@ -1307,9 +1296,6 @@ section h2 {
     border-radius: 10px; /* Add border radius */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for image */
     transition: transform 0.5s ease; /* Add transition for hover effect */
-}
-.team-member:hover .team-photo {
-    transform: scale(1.05); /* Subtle zoom on hover */
 }
 .team-member-info {
     padding: 2rem;
@@ -1407,8 +1393,7 @@ section h2 {
     box-shadow: none;
 }
 .contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 .contact-icon {
     font-size: 2.5rem;
@@ -1430,6 +1415,9 @@ section h2 {
     z-index: -1;
     transition: background-color 0.3s ease;
 }
+.contact-card:hover .contact-icon {
+    transform: none;
+}
 .contact-card h3 {
     margin-bottom: var(--space-xs);
     font-size: 1.5rem;
@@ -1445,9 +1433,6 @@ section h2 {
 .contact-card a {
     color: var(--primary-color);
     font-weight: 500;
-}
-.contact-card:hover .contact-icon {
-    transform: scale(1.1);
 }
 .hours-list {
     list-style: none;
@@ -1476,7 +1461,6 @@ section h2 {
 }
 .map-section {
     background-color: var(--bg-accent);
-    padding: var(--space-md) 0 var(--space-lg);
 }
 .map-section h2 {
     text-align: center;
@@ -1602,7 +1586,7 @@ section h2 {
     }
     
     .step:hover {
-        transform: translateY(-5px);
+        transform: none;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
     
@@ -1741,7 +1725,6 @@ section h2 {
 }
 .content-section {
     background-color: var(--bg-accent);
-    padding: var(--space-md) 0 var(--space-lg);
 }
 .content-container {
     border-radius: 10px;
@@ -1767,8 +1750,7 @@ section h2 {
     transition: var(--transition);
 }
 .article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 .article-content {
     padding: 2rem;
@@ -1858,8 +1840,7 @@ section h2 {
 }
 
 .custom-instagram-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transform: none;
 }
 
 .instagram-post-image {
@@ -1878,7 +1859,7 @@ section h2 {
 }
 
 .instagram-post-image a:hover {
-    transform: scale(1.02);
+    transform: none;
 }
 
 .instagram-post-image a img {
@@ -2072,7 +2053,6 @@ section h2 {
     }
 }
 
-/* Component System Styles */
 .component {
     margin-bottom: 2rem;
 }
@@ -2101,8 +2081,7 @@ section h2 {
 }
 
 .dynamic-features .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 
 /* Component-specific Button Styles */
@@ -2135,7 +2114,6 @@ section h2 {
     background-color: rgba(42, 108, 59, 0.05);
 }
 
-/* Component-specific Card Styles */
 .card-component {
     background-color: #fff;
     border-radius: 8px;
@@ -2145,8 +2123,7 @@ section h2 {
 }
 
 .card-component:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 
 .card-header {
@@ -2182,7 +2159,6 @@ section h2 {
     left: 20px;
 }
 
-/* Component-specific Hero Styles */
 .hero-component {
     padding: 6rem 0;
     background-color: var(--light-background, #f9f9f9);
@@ -2223,7 +2199,6 @@ section h2 {
     }
 }
 
-/* Fix feature sizes to ensure consistency */
 .features .feature,
 .intro-features .feature {
     flex: 1;
@@ -2235,7 +2210,6 @@ section h2 {
     transition: var(--transition);
 }
 
-/* Ensure dynamic features match original features */
 #intro-features .feature {
     flex: 1;
     flex-basis: 0;
@@ -2260,5 +2234,3 @@ section h2 {
         margin-bottom: 1.5rem;
     }
 }
-
-/* Ensure dynamic features match original features */
