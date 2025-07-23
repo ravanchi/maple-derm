@@ -28,30 +28,24 @@
     /* Transitions */
     --transition: all 0.3s ease;
 }
-
 /* Device type classes */
 body.is-desktop .mobile-only {
     display: none !important;
 }
-
 body.is-desktop .desktop-only {
     display: block !important;
 }
-
 body.is-mobile .desktop-only {
     display: none !important;
 }
-
 body.is-mobile .mobile-only {
     display: block !important;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: var(--body-font);
     color: var(--text-color);
@@ -60,7 +54,6 @@ body {
     font-weight: 400;
     overflow-x: hidden;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     font-weight: 500;
@@ -68,66 +61,54 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.2rem;
     letter-spacing: var(--letter-spacing);
 }
-
 h1 {
     font-size: 3.2rem;
     font-weight: 500;
 }
-
 h2 {
     font-size: 2.5rem;
     max-width: 800px;
     margin: 0 auto 2rem;
 }
-
 h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
 }
-
 h4 {
     font-size: 1.25rem;
 }
-
 p {
     margin-bottom: var(--space-sm);
     font-weight: 300;
 }
-
 a {
     color: inherit;
     text-decoration: none;
     transition: var(--transition);
 }
-
 ul {
     list-style: none;
 }
-
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-sm) 0 var(--space-sm);
 }
-
 section {
     padding: var(--section-padding) 0;
 }
-
 /* Reduce testimonials section padding */
 .testimonials {
     padding: var(--space-sm) 0;
     background-color: var(--bg-accent);
 }
-
 em {
     font-family: var(--heading-font);
     font-style: italic;
     color: var(--primary-color);
     font-weight: 400;
 }
-
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -140,7 +121,6 @@ em {
     align-items: center;
     justify-content: center;
 }
-
 .primary-btn {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -150,13 +130,11 @@ em {
     align-items: center;
     justify-content: center;
 }
-
 .primary-btn:hover {
     background-color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
 }
-
 .text-link {
     color: var(--primary-color);
     font-weight: 500;
@@ -164,7 +142,6 @@ em {
     display: inline-block;
     font-size: 0.95rem;
 }
-
 .text-link:after {
     content: '';
     position: absolute;
@@ -177,17 +154,14 @@ em {
     transform-origin: bottom right;
     transition: transform 0.3s;
 }
-
 .text-link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
 /* Special link class for FAQ - no underline on hover */
 .text-link.no-underline:after {
     display: none;
 }
-
 /* Header */
 .site-header {
     position: fixed;
@@ -201,7 +175,6 @@ em {
     transition: all 0.5s ease;
     height: auto;
 }
-
 .site-header.scrolled {
     padding: calc(var(--space-xs) * 0.7) 0;
     background-color: rgba(255, 255, 255, 0.98);
@@ -209,7 +182,6 @@ em {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-
 .site-header .container {
     display: flex;
     justify-content: flex-start;
@@ -220,41 +192,34 @@ em {
     position: relative;
     padding: 0;
 }
-
 .logo {
     margin-right: 2rem;
 }
-
 .logo a {
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
 }
-
 .logo-img {
     height: 60px;
     width: auto;
     transition: all 0.3s ease;
 }
-
 /* Adjust logo styling when scrolled */
 .scrolled .logo-img {
     height: 48px; /* Scale down on scroll */
 }
-
 .main-nav {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
 }
-
 .main-nav ul {
     display: flex;
     gap: 1.5rem;
     align-items: center;
     flex-wrap: nowrap;
 }
-
 .main-nav a {
     position: relative;
     font-weight: 400;
@@ -263,17 +228,14 @@ em {
     font-size: 0.95rem;
     letter-spacing: 0.01em;
 }
-
 /* Adjust text color when scrolled for better contrast */
 .scrolled .main-nav a {
     color: var(--text-color);
 }
-
 /* Ensure CTA button text stays white when scrolled */
 .scrolled .cta-button a {
     color: var(--light-text);
 }
-
 .main-nav a:after {
     content: '';
     position: absolute;
@@ -286,12 +248,10 @@ em {
     transform-origin: bottom right;
     transition: transform 0.3s;
 }
-
 .main-nav a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
 .cta-button a {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -306,18 +266,15 @@ em {
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
 }
-
 .cta-button a:hover {
     background-color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: none;
 }
-
 /* Override the underline effect for the CTA button */
 .cta-button a:after {
     display: none;
 }
-
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -328,7 +285,6 @@ em {
     margin-left: auto;
     position: relative;
 }
-
 .mobile-menu-toggle span {
     display: block;
     height: 2px;
@@ -337,44 +293,36 @@ em {
     transition: all 0.3s ease;
     position: absolute;
 }
-
 .mobile-menu-toggle span:nth-child(1) {
     top: 0;
 }
-
 .mobile-menu-toggle span:nth-child(2) {
     top: 9px;
 }
-
 .mobile-menu-toggle span:nth-child(3) {
     top: 18px;
 }
-
 /* Hero Section */
 .hero {
     min-height: 65vh;
     position: relative;
     overflow: hidden;
-    padding-top: calc(var(--space-lg) + 40px); /* Add extra padding to account for nav height */
+    padding-top: calc(var(--space-lg) + 40px); 
     padding-bottom: var(--space-md);
     background-color: var(--secondary-color);
-    margin-top: 0; /* Ensure no additional margin causes overlap */
+    margin-top: 0; 
 }
-
-/* Hero container for side-by-side layout */
 .hero-container {
     width: 90%;
-    max-width: 1400px; /* Wider than regular container for side-by-side */
+    max-width: 1400px; 
     margin: 0 auto;
-    padding-left: var(--space-sm); /* Match header left padding */
+    padding-left: var(--space-sm); 
     display: flex;
-    flex-direction: row; /* Side-by-side layout on desktop */
+    flex-direction: row; 
     align-items: center;
     justify-content: space-between;
     gap: var(--space-sm);
 }
-
-/* Right side - Image container */
 .hero-image-container {
     flex: 1;
     height: 420px;
@@ -383,8 +331,6 @@ em {
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-
-/* Add subtle color overlay to the image */
 .hero-image-container::after {
     content: '';
     position: absolute;
@@ -395,8 +341,6 @@ em {
     pointer-events: none;
     z-index: 1;
 }
-
-/* Hero image styling */
 .hero-image {
     width: 100%;
     height: 100%;
@@ -407,16 +351,12 @@ em {
     position: relative;
     z-index: 0;
 }
-
-/* Left side - Hero content */
 .hero-content {
     flex: 1;
     max-width: 600px;
-    padding: 1.5rem; /* Reduced padding slightly */
     position: relative;
     text-align: left;
 }
-
 .hero-subtitle {
     font-size: 1.1rem;
     margin-bottom: var(--space-sm);
@@ -425,66 +365,27 @@ em {
     max-width: 540px;
     font-weight: 300;
 }
-
 .hero-content h1 {
     margin-bottom: var(--space-sm);
     letter-spacing: -0.02em;
     line-height: 1.25;
     font-weight: 500;
 }
-
 .hero-content h1 em {
     font-weight: 500;
     font-style: italic;
 }
-
-/* Particles */
-.particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.particle {
-    position: absolute;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    animation: float 20s linear infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translate(0, 0) rotate(0deg) scale(1);
-    }
-    33% {
-        transform: translate(30px, -50px) rotate(120deg) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 30px) rotate(240deg) scale(0.9);
-    }
-    100% {
-        transform: translate(0, 0) rotate(360deg) scale(1);
-    }
-}
-
-/* Intro Section */
 .intro {
     text-align: center;
     background-color: #fff;
     padding: var(--section-padding) 0;
 }
-
 .features {
     display: flex;
     justify-content: space-between;
     gap: var(--space-sm);
     margin: var(--space-sm) 0;
 }
-
 .feature {
     flex: 1;
     padding: var(--space-sm);
@@ -492,7 +393,6 @@ em {
     text-align: center;
     transition: var(--transition);
 }
-
 .feature-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -500,13 +400,12 @@ em {
     position: relative;
     transition: transform 0.3s ease;
 }
-
 .feature-icon:after {
     content: '';
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: transparent; /* Remove the background */
+    background-color: transparent;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -514,12 +413,10 @@ em {
     z-index: -1;
     transition: background-color 0.3s ease;
 }
-
 .feature h3 {
     margin-bottom: var(--space-xs);
     font-size: 1.5rem;
 }
-
 .feature p {
     font-size: 0.95rem;
     line-height: var(--body-line-height);
@@ -527,20 +424,15 @@ em {
     opacity: 0.85;
     font-weight: 300;
 }
-
 .feature:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
 .feature:hover .feature-icon {
     transform: scale(1.1);
 }
-
-/* Mobile scroll animation styles */
 @media (max-width: 768px) {
     .feature {
-        /* Removed opacity that was affecting text color */
         transform: translateY(20px);
         transition: transform 0.6s ease, box-shadow 0.6s ease;
     }
@@ -555,10 +447,9 @@ em {
     }
     
     .feature-active .feature-icon:after {
-    background-color: transparent;
-}
-    
-    /* Maintain consistent button height on mobile */
+        background-color: transparent;
+    }
+
     .cta-button a {
         height: 42px; /* Match desktop height */
         display: flex;
@@ -566,32 +457,20 @@ em {
         justify-content: center;
     }
 }
-
-/* Services Section */
-.services {
-    background-color: var(--bg-accent);
-    text-align: center;
-    padding: var(--section-padding) 0;
-}
-
-/* Combined services and testimonials section */
 .services-testimonials {
     background-color: var(--bg-accent);
     text-align: center;
     padding: var(--section-padding) 0;
 }
-
 .services-testimonials .testimonial-slider {
     margin-top: var(--space-md);
 }
-
 .service-cards {
     display: flex;
     justify-content: space-between;
     gap: var(--space-sm);
     margin-top: var(--space-sm);
 }
-
 .service-card {
     background-color: #fff;
     flex: 1;
@@ -601,24 +480,19 @@ em {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
     transition: var(--transition);
 }
-
 .service-icon {
     font-size: 2.2rem;
     color: var(--primary-color);
     opacity: 0.9;
 }
-
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
-/* Update service cards */
 .service-card h3 {
     margin-bottom: var(--space-xs);
     font-size: 1.5rem;
 }
-
 .service-card p {
     font-size: 0.95rem;
     line-height: var(--body-line-height);
@@ -626,31 +500,25 @@ em {
     margin-bottom: var(--space-xs);
     font-weight: 300;
 }
-
-/* Testimonials Section */
 .testimonial-slider {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
 }
-
 .testimonial {
     background-color: rgba(255, 255, 255, 0.9);
     padding: var(--space-md);
     border-radius: 8px;
     text-align: center;
 }
-
 .testimonial-content {
     opacity: 1;
     transition: opacity 0.5s ease;
 }
-
 .stars {
     color: var(--primary-color);
     margin-bottom: var(--space-xs);
 }
-
 .testimonial p {
     font-size: 1.1rem;
     margin-bottom: var(--space-sm);
@@ -660,22 +528,14 @@ em {
     font-weight: 400;
     opacity: 0.9;
 }
-
 .client {
     font-weight: 500;
 }
-
 .name {
     color: #888888;
     font-weight: 400;
     font-size: 0.9rem;
 }
-
-.treatment {
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
 /* Slider Navigation Dots */
 .slider-dots {
     position: relative;
@@ -684,7 +544,6 @@ em {
     margin-top: var(--space-sm);
     gap: 8px;
 }
-
 .slider-dot {
     width: 12px;
     height: 12px;
@@ -694,13 +553,10 @@ em {
     transition: all 0.3s ease;
     margin-bottom: 10px;
 }
-
 .slider-dot.active {
     background-color: var(--primary-color);
     transform: scale(1.2);
 }
-
-/* Testimonial slider responsiveness */
 @media (max-width: 768px) {
     .testimonial {
         padding: 2rem 1.5rem;
@@ -710,33 +566,24 @@ em {
         font-size: 1rem;
     }
 }
-
-/* End of main styles */
-
 .footer-cta .btn {
     margin-bottom: var(--space-xs);
 }
-
-/* Adding a specific style for the CTA section paragraph */
 .footer-cta p {
     margin-bottom: 0;
     font-size: 0.95rem;
     line-height: 1.5;
     opacity: 0.8;
 }
-
-/* Base footer styles */
 .site-footer {
     background-color: var(--secondary-color);
     color: var(--text-color);
     padding: var(--space-sm) 0 var(--space-md) 0;
     border-top: 1px solid var(--border-color);
 }
-
 .footer-content {
     width: 100%;
 }
-
 .footer-row {
     display: flex;
     justify-content: space-between;
@@ -745,34 +592,25 @@ em {
     gap: var(--space-md);
     width: 100%;
 }
-
-/* Logo styling */
 .footer-logo {
     flex-shrink: 0;
 }
-
 .footer-logo-img {
     height: 75px;
     width: auto;
 }
-
-/* Address section */
 .footer-address {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-/* Legal section */
 .footer-legal {
     text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-/* Common text styling for both sections */
 .footer-address p,
 .footer-legal p {
     color: var(--text-color);
@@ -783,43 +621,33 @@ em {
     padding: 0;
     font-weight: 300;
 }
-
 .footer-address p:last-child,
 .footer-legal p:last-child {
     margin-bottom: 0;
 }
-
-/* Link styling */
 .footer-address a,
 .footer-legal a {
     color: var(--primary-color);
     transition: var(--transition);
     display: inline-block;
 }
-
 .footer-address .address-link {
     color: var(--text-color);
     text-decoration: none;
 }
-
 .footer-address a:hover,
 .footer-legal a:hover {
     color: var(--accent-color);
 }
-
-/* Made with heart text */
 .made-with {
     font-size: 0.9rem;
     opacity: 0.7;
     margin-top: 0.3rem;
 }
-
 .heart {
     color: #ff6b6b;
     font-size: 0.9rem;
 }
-
-/* Mobile styles */
 @media (max-width: 768px) {
     .footer-row {
         flex-direction: column;
@@ -834,7 +662,6 @@ em {
         margin-bottom: var(--space-sm);
         align-items: center;
     }
-
     .footer-address {
         padding-left: 0;
     }
@@ -849,15 +676,12 @@ em {
         text-align: center;
     }
 }
-
-/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     margin-top: 2rem;
 }
-
 .social-icons a {
     color: var(--text-color);
     font-size: 1.2rem;
@@ -871,15 +695,12 @@ em {
     justify-content: center;
     background-color: rgba(214, 183, 91, 0.08);
 }
-
 .social-icons a:hover {
     color: var(--primary-color);
     opacity: 1;
     background-color: rgba(214, 183, 91, 0.15);
     transform: translateY(-2px);
 }
-
-/* Responsive Design */
 @media (max-width: 1024px) {
     h1 {
         font-size: 2.8rem;
@@ -895,8 +716,6 @@ em {
         padding: 0 var(--space-sm);
     }
 }
-
-/* Handle flexible navigation for medium screen sizes */
 @media (max-width: 1024px) and (min-width: 769px) {
     .main-nav ul {
         gap: 1rem; /* row-gap column-gap */
@@ -908,36 +727,33 @@ em {
     }
     
     .cta-button a {
-        padding: 8px 16px; /* Slightly smaller padding */
-        font-size: 0.9rem; /* Slightly smaller text */
-        height: auto; /* Ensure height remains consistent */
+        padding: 8px 16px;
+        font-size: 0.9rem; 
+        height: auto; 
         line-height: 1.5;
     }
-    
-    /* Maintain consistent button height at medium sizes too */
+
     .cta-button a {
-        height: 42px; /* Match desktop height */
+        height: 42px; 
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px 15px; /* Slightly smaller horizontal padding */
+        padding: 10px 15px;
     }
 }
-
 @media (max-width: 1024px) {
     .hero-container {
         padding-left: 20px;
     }
 }
-
 @media (max-width: 768px) {
     section {
         padding: var(--section-padding-mobile) 0;
     }
     
     .hero {
-        padding-top: calc(var(--space-md) + 65px); /* Account for smaller nav on mobile */
-        padding-bottom: var(--space-md); /* Increased bottom padding for consistent spacing */
+        padding-top: calc(var(--space-md) + 65px); 
+        padding-bottom: var(--space-md); 
     }
     
     .hero-container {
@@ -966,11 +782,11 @@ em {
     
     .hero-image-container {
         width: 100%;
-        height: 280px; /* Increased from 240px for a better view of the office image */
-        border-radius: 10px; /* Explicitly maintain rounded corners on mobile */
+        height: 280px; 
+        border-radius: 10px; 
         overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Add shadow to match desktop */
-        margin-bottom: var(--space-sm); /* Add space after the image */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
+        margin-bottom: var(--space-sm); 
     }
     
     /* Style for mobile hero image */
@@ -985,8 +801,8 @@ em {
     .hero-content {
         text-align: center;
         padding: 0;
-        padding-top: var(--space-sm); /* Add space after image */
-        padding-bottom: var(--space-xs); /* Add space before next section */
+        padding-top: var(--space-sm);
+        padding-bottom: var(--space-xs); 
         max-width: 100%;
     }
     
@@ -994,11 +810,11 @@ em {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: var(--space-md); /* Increase space before button */
+        margin-bottom: var(--space-md); 
     }
     
     .hero-content .btn {
-        margin-bottom: var(--space-sm); /* Add space after the button */
+        margin-bottom: var(--space-sm);
     }
     
     .main-nav {
@@ -1006,36 +822,27 @@ em {
         top: 85px;
         left: 0;
         width: 100%;
-        background-color: var(--secondary-color); /* Default color matching non-scrolled navbar */
+        background-color: var(--secondary-color); 
         padding: 1rem 0 1.5rem;
         display: none;
         justify-content: center;
         transition: top 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-        z-index: 999; /* Ensure it's just below header but above other content */
+        z-index: 999; 
         opacity: 0;
     }
-    
-    /* Shadow is handled differently for mobile menu */
-    /* No additional styling needed here */
-    
-    /* Update the mobile nav background color to match the scrolled navbar */
     .site-header.scrolled .main-nav {
-        top: 60px; /* Smaller top position when header is scrolled/collapsed */
-        background-color: rgba(255, 255, 255, 0.98); /* Match the scrolled navbar background */
+        top: 60px; 
+        background-color: rgba(255, 255, 255, 0.98); 
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border-top: none; /* Remove any potential top border */
-        margin-top: -1px; /* Negative margin to ensure connection */
-    }
-    
-    /* No additional shadow for scrolled state */
-    
+        border-top: none; 
+        margin-top: -1px; 
+    }    
     .main-nav.active {
         display: block;
         opacity: 1;
         box-shadow: 0 6px 6px -6px rgba(0,0,0,0.1); /* Bottom-only shadow */
     }
-    
     .main-nav ul {
         flex-direction: column;
         gap: 1.2rem;
@@ -1145,11 +952,11 @@ em {
     }
     
     .logo-img {
-        height: 50px; /* Smaller logo on mobile */
+        height: 50px; 
     }
     
     .scrolled .logo-img {
-        height: 42px; /* Even smaller when scrolled on mobile */
+        height: 42px;
     }
     
     .footer-logo {
@@ -1160,7 +967,6 @@ em {
         height: 75px;
     }
 }
-
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
@@ -1183,7 +989,7 @@ em {
     .hero {
         min-height: 60vh;
         padding-top: calc(var(--space-md) + 65px);
-        padding-bottom: var(--space-md); /* Consistent with larger mobile */
+        padding-bottom: var(--space-md);
     }
     
     section {
@@ -1200,21 +1006,19 @@ em {
     .hero-image {
         border-radius: 8px;
     }
-    
-    /* Ensure footer logo doesn't get too small on very small screens */
+
     .footer-logo-img {
         height: 75px;
     }
     
-    /* Adjust mobile nav position for very small screens */
     .main-nav {
         top: 95px;
-        background-color: var(--secondary-color); /* Ensure it's specified at this breakpoint too */
+        background-color: var(--secondary-color);
     }
     
     .site-header.scrolled .main-nav {
         top: 60px;
-        background-color: rgba(255, 255, 255, 0.98); /* Maintain consistency with larger screens */
+        background-color: rgba(255, 255, 255, 0.98);
     }
     
     .steps-grid {
@@ -1240,24 +1044,19 @@ em {
         font-size: 0.9rem;
     }
 }
-
-/* Dropdown Menu Styles */
 .has-dropdown {
     position: relative;
 }
-
 .has-dropdown > a:after {
-    display: none; /* Hide the dropdown caret */
+    display: none;
 }
-
 .has-dropdown:hover > a:after {
     transform: rotate(180deg);
 }
-
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: -15px; /* Further adjust to better align text with parent */
+    left: -15px;
     min-width: 180px;
     background-color: #fff;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -1270,37 +1069,30 @@ em {
     z-index: 100;
     border: 1px solid var(--border-color);
 }
-
 .has-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
 .dropdown-menu a {
     display: block;
-    padding: 8px 16px; /* Reduce left padding from 20px to 16px */
+    padding: 8px 16px; 
     color: var(--text-color);
     font-weight: 400;
     font-size: 0.95rem;
     white-space: nowrap;
     transition: all 0.2s ease;
 }
-
 .dropdown-menu a:hover {
     background-color: var(--bg-accent);
     color: var(--primary-color);
 }
-
 .dropdown-menu a:after {
-    display: none; /* Remove underline effect for dropdown items */
+    display: none;
 }
-
 .dropdown-menu a:hover:after {
-    display: none; /* Ensure no underline on hover */
+    display: none; 
 }
-
-/* Mobile Menu Adjustments */
 @media (max-width: 768px) {
     .dropdown-menu {
         position: static;
@@ -1333,25 +1125,20 @@ em {
         margin-left: 6px;
     }
 }
-
-/* Social Icons in Nav */
 .social-nav {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
-
-/* Add a media query for the specific breakpoint where the button was breaking */
 @media (max-width: 950px) and (min-width: 769px) {
     .main-nav ul {
-        gap: 1rem; /* Further reduce gap for this specific range */
+        gap: 1rem; 
     }
     
     .main-nav a {
-        font-size: 0.95rem; /* Slightly smaller font for navbar items */
+        font-size: 0.95rem; 
     }
 }
-
 .social-nav a {
     color: var(--text-color);
     font-size: 1.2rem;
@@ -1360,18 +1147,13 @@ em {
     align-items: center;
     justify-content: center;
 }
-
 .social-nav a:hover {
     color: var(--primary-color);
     transform: translateY(-2px);
 }
-
-/* Override the underline effect for social nav */
 .social-nav a:after {
     display: none;
 }
-
-/* Mobile social nav styling */
 @media (max-width: 768px) {
     .mobile-menu-social {
         display: flex;
@@ -1390,14 +1172,10 @@ em {
         background-color: rgba(214, 183, 91, 0.15);
     }
 }
-
-/* Section Heading Styles - Consistent across website */
 section h2 {
     margin-bottom: var(--space-sm);
     position: relative;
 }
-
-/* Specific section title styles that need larger margins */
 .services h2, 
 .intro h2,
 .services-testimonials h2 {
@@ -1406,72 +1184,57 @@ section h2 {
     margin-right: auto;
     margin-bottom: var(--space-md);
 }
-
-/* Footer CTA Section (merged with footer) */
 .footer-cta {
     text-align: center;
     padding: var(--space-sm) 0 calc(var(--space-md));
     border-bottom: 1px solid var(--border-color);
     margin-bottom: var(--space-sm);
 }
-
 .footer-cta h2 {
     margin-bottom: var(--space-sm);
     font-size: 2.2rem;
     color: var(--text-color);
 }
-
-/* About Page Styles */
 .about-hero {
     background-color: var(--secondary-color);
     padding: calc(var(--section-padding)) 0 var(--section-padding);
     text-align: center;
-    margin-top: 70px; /* To account for fixed header */
+    margin-top: 70px;
 }
-
 .about-hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .about-subtitle {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto;
     font-weight: 300;
 }
-
-/* Founding Doctor Section */
 .founding-doctor {
     padding: var(--section-padding) 0;
     background-color: #fff;
 }
-
 .doctor-profile {
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
 }
-
 .doctor-image {
     flex: 0 0 40%;
 }
-
 .doctor-photo {
     width: 100%;
     border-radius: 5px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
 .doctor-info {
     flex: 0 0 60%;
 }
-
 .doctor-info h2 {
     margin-bottom: 0.5rem;
     font-size: 2.2rem;
 }
-
 .doctor-info h3 {
     font-family: var(--body-font);
     font-weight: 400;
@@ -1479,48 +1242,40 @@ section h2 {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
-
 .doctor-credentials {
     margin-top: 2rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
 }
-
 .credential {
     display: flex;
     align-items: flex-start;
     margin-bottom: 1rem;
 }
-
 .credential i {
     color: var(--primary-color);
-    width: 20px; /* Fixed width for icons */
-    text-align: center; /* Center the icon in its fixed width */
+    width: 20px; 
+    text-align: center; 
     margin-right: 1rem;
     margin-top: 0.25rem;
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    flex-shrink: 0; 
 }
-
 .credential span {
     font-weight: 400;
-    padding-top: 2px; /* Slight padding to align with icon */
+    padding-top: 2px;
 }
-
-/* Team Section */
 .team {
     background-color: var(--bg-accent);
     padding: var(--section-padding) 0;
 }
-
 .team h2 {
     text-align: center;
     margin-bottom: 3rem;
 }
-
 .team-member {
     display: grid;
-    grid-template-columns: 250px 1fr; /* Fixed width for image column */
-    align-items: center; /* Changed to center for vertical alignment */
+    grid-template-columns: 250px 1fr; 
+    align-items: center;
     background-color: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -1528,25 +1283,22 @@ section h2 {
     margin-bottom: 3rem;
     transition: var(--transition);
 }
-
 .team-member:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
 .team-member-image {
-    width: 220px; /* Slightly smaller to allow for padding */
-    height: 270px; /* Slightly smaller to allow for padding */
+    width: 220px; 
+    height: 270px;
     position: relative;
     overflow: hidden;
-    display: flex; /* Added for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background-color: var(--bg-accent); /* Background color for image container */
-    margin: 15px; /* Add margin around the image container */
-    border-radius: 10px; /* Match the border radius of the photo */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: var(--bg-accent);
+    margin: 15px;
+    border-radius: 10px;
 }
-
 .team-photo {
     width: 100%;
     height: 100%;
@@ -1556,11 +1308,9 @@ section h2 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for image */
     transition: transform 0.5s ease; /* Add transition for hover effect */
 }
-
 .team-member:hover .team-photo {
     transform: scale(1.05); /* Subtle zoom on hover */
 }
-
 .team-member-info {
     padding: 2rem;
     align-self: center; /* Center vertically */
@@ -1568,24 +1318,20 @@ section h2 {
     display: flex;
     flex-direction: column;
 }
-
 .team-member-info h3 {
     margin-bottom: 0.5rem;
 }
-
 .team-title {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-weight: 500;
 }
-
 /* Responsive styles for About page */
 @media (max-width: 1024px) {
     .doctor-profile {
         gap: var(--space-sm);
     }
 }
-
 @media (max-width: 768px) {
     .about-hero {
         margin-top: 60px;
@@ -1628,14 +1374,12 @@ section h2 {
         border-radius: 10px; /* Keep consistent border radius */
     }
 }
-
 /* Booking Page Styles */
 .book-hero {
     background-color: var(--secondary-color);
     padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding);
     text-align: center;
 }
-
 .book-subtitle {
     max-width: 800px;
     margin: 0 auto;
@@ -1643,19 +1387,16 @@ section h2 {
     color: var(--text-color);
     line-height: 1.6;
 }
-
 .contact-info {
     background-color: var(--light-text);
     padding: var(--space-md) 0;
     text-align: center;
 }
-
 .contact-grid {
     display: flex;
     justify-content: space-between;
     gap: var(--space-sm);
 }
-
 .contact-card {
     flex: 1;
     padding: var(--space-sm);
@@ -1665,12 +1406,10 @@ section h2 {
     background-color: transparent;
     box-shadow: none;
 }
-
 .contact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
 .contact-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -1678,7 +1417,6 @@ section h2 {
     position: relative;
     transition: transform 0.3s ease;
 }
-
 .contact-icon:after {
     content: '';
     position: absolute;
@@ -1692,12 +1430,10 @@ section h2 {
     z-index: -1;
     transition: background-color 0.3s ease;
 }
-
 .contact-card h3 {
     margin-bottom: var(--space-xs);
     font-size: 1.5rem;
 }
-
 .contact-card p {
     font-size: 0.95rem;
     line-height: var(--body-line-height);
@@ -1706,16 +1442,13 @@ section h2 {
     font-weight: 300;
     margin-bottom: var(--space-xs);
 }
-
 .contact-card a {
     color: var(--primary-color);
     font-weight: 500;
 }
-
 .contact-card:hover .contact-icon {
     transform: scale(1.1);
 }
-
 .hours-list {
     list-style: none;
     text-align: left;
@@ -1723,7 +1456,6 @@ section h2 {
     max-width: 280px;
     margin: 0 auto;
 }
-
 .hours-list li {
     margin-bottom: 0.6rem;
     display: flex;
@@ -1735,27 +1467,21 @@ section h2 {
     opacity: 0.85;
     font-weight: 300;
 }
-
 .hours-list span {
     font-weight: 500;
     min-width: 145px;
 }
-
-/* Special styling for the hours contact card */
 .contact-card:nth-child(2) {
     min-width: 280px;
 }
-
 .map-section {
     background-color: var(--bg-accent);
     padding: var(--space-md) 0 var(--space-lg);
 }
-
 .map-section h2 {
     text-align: center;
     margin-bottom: var(--space-sm);
 }
-
 .location-details {
     max-width: 800px;
     margin: 0 auto var(--space-md);
@@ -1764,56 +1490,46 @@ section h2 {
     align-items: center;
     gap: var(--space-sm);
 }
-
 .location-address {
     text-align: center;
     margin-bottom: var(--space-xs);
 }
-
 .location-address p {
     margin-bottom: 0.5rem;
 }
-
 .location-description {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
-
 .location-description p {
     font-size: 1rem;
     line-height: 1.6;
 }
-
 .map-container {
     border-radius: 10px;
     overflow: hidden;
     max-width: 1100px;
     margin: 0 auto;
 }
-
 .booking-steps {
     padding: 0 0 var(--space-md) 0;
     background-color: var(--light-text);
 }
-
 .booking-steps h2 {
     text-align: center;
     margin-bottom: var(--space-sm);
 }
-
 .process-description {
     max-width: 800px;
     margin: 0 auto var(--space-lg);
     text-align: center;
 }
-
 .process-description p {
     font-size: 1.05rem;
     line-height: 1.6;
     color: var(--text-color);
 }
-
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1821,13 +1537,11 @@ section h2 {
     max-width: 1000px;
     margin: 0 auto;
 }
-
 .step {
     text-align: center;
     position: relative;
     padding: var(--space-sm);
 }
-
 .step-number {
     width: 44px;
     height: 44px;
@@ -1841,19 +1555,15 @@ section h2 {
     justify-content: center;
     margin: 0 auto var(--space-sm);
 }
-
 .step h3 {
     margin-bottom: var(--space-xs);
     font-size: 1.3rem;
 }
-
 .step p {
     max-width: 250px;
     margin-left: auto;
     margin-right: auto;
 }
-
-/* Responsive styles for booking page */
 @media (max-width: 1024px) {
     .contact-grid, 
     .steps-grid {
@@ -1864,7 +1574,6 @@ section h2 {
         max-width: 100%;
     }
 }
-
 @media (max-width: 768px) {
     .book-hero {
         padding: calc(var(--section-padding-mobile) + 3.5rem) 0 var(--space-md);
@@ -1955,8 +1664,7 @@ section h2 {
         min-width: auto;
         margin-bottom: 0.2rem;
     }
-    
-    /* Ensure hours card gets priority */
+
     .contact-card:nth-child(2) {
         min-width: unset;
         width: 100%;
@@ -1989,7 +1697,6 @@ section h2 {
         margin-right: 0.5rem;
     }
 }
-
 @media (max-width: 480px) {
     .book-subtitle {
         font-size: 1rem;
@@ -2024,91 +1731,34 @@ section h2 {
         min-width: 125px;
     }
 }
-
-/* Media Page Styles */
 .page-hero {
     padding: 8rem 0 4rem;
     background-color: var(--secondary-color);
     text-align: center;
 }
-
 .page-hero h1 {
     margin-bottom: 1rem;
 }
-
-/* Gallery Styles */
-.media-gallery {
-    background-color: var(--light-text);
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: var(--light-text);
-    padding: 1.5rem 1rem 1rem;
-    text-align: left;
-    font-weight: 400;
-}
-
-/* Generic Content Section */
 .content-section {
     background-color: var(--bg-accent);
     padding: var(--space-md) 0 var(--space-lg);
 }
-
-/* Using default section h2 margin defined above */
-
 .content-container {
     border-radius: 10px;
     overflow: hidden;
     max-width: 1100px;
     margin: 0 auto;
 }
-
-/* Featured Articles Styles */
 .featured-articles {
     background-color: var(--bg-accent);
     text-align: center;
 }
-
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
-
 .article-card {
     background-color: var(--light-text);
     border-radius: 8px;
@@ -2116,12 +1766,10 @@ section h2 {
     overflow: hidden;
     transition: var(--transition);
 }
-
 .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-
 .article-content {
     padding: 2rem;
     text-align: left;
@@ -2129,7 +1777,6 @@ section h2 {
     display: flex;
     flex-direction: column;
 }
-
 .article-source {
     display: inline-block;
     font-weight: 500;
@@ -2137,54 +1784,32 @@ section h2 {
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
-
 .article-content h3 {
     margin-bottom: 1rem;
 }
-
 .article-content p {
     margin-bottom: 1.5rem;
     flex-grow: 1;
 }
-
 .article-content .btn {
     margin-top: 0;
     align-self: flex-start;
 }
-
-/* Media Queries for Media Page */
-@media (max-width: 1024px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     .page-hero {
         padding: 7rem 0 3rem;
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 1.2rem;
-    }
-    
-    .gallery-item img {
-        height: 250px;
-    }
     
     .articles-grid {
         gap: 1.5rem;
     }
 }
-
-/* Page Hero - Generic hero section for all pages */
 .page-hero {
     background-color: var(--secondary-color);
     padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding);
     text-align: center;
 }
-
 .page-subtitle {
     max-width: 800px;
     margin: 0 auto;
@@ -2194,22 +1819,7 @@ section h2 {
     font-weight: 300;
 }
 
-/* Older hero styles - keeping for backward compatibility */
-.book-hero {
-    background-color: var(--secondary-color);
-    padding: calc(var(--section-padding) + 3.5rem) 0 var(--section-padding);
-    text-align: center;
-}
-
-.book-subtitle {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.25rem;
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-/* Instagram Feed Styles */
+/* Instagram Feed Styling */
 .instagram-feed {
     background-color: var(--light-text);
     text-align: center;
@@ -2221,36 +1831,30 @@ section h2 {
 }
 
 .instagram-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
     padding: 0 15px;
     box-sizing: border-box;
 }
 
-.instagram-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
+#instagram-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 320px));
     gap: 30px;
+    justify-content: center;
     margin: 0 auto 30px;
     width: 100%;
     max-width: 1100px;
 }
 
-/* Custom Instagram Post Styles */
 .custom-instagram-post {
-    flex: 0 0 320px;
-    max-width: 320px;
+    width: 100%;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 10px;
 }
 
 .custom-instagram-post:hover {
@@ -2258,14 +1862,26 @@ section h2 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Ensure the post images maintain proper aspect ratio */
 .instagram-post-image {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+    overflow: hidden;
 }
 
-.instagram-post-image img {
+.instagram-post-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.instagram-post-image a:hover {
+    transform: scale(1.02);
+}
+
+.instagram-post-image a img {
     position: absolute;
     top: 0;
     left: 0;
@@ -2288,13 +1904,6 @@ section h2 {
     pointer-events: none;
 }
 
-.play-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .instagram-play-overlay i {
     font-size: 50px;
     color: white;
@@ -2309,78 +1918,12 @@ section h2 {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive breakpoints */
-@media (min-width: 992px) {
-    .instagram-grid {
-        max-width: 1100px;
-        margin: 0 auto 30px;
-    }
+.play-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
-@media (max-width: 1100px) {
-    .custom-instagram-post {
-        flex: 0 0 300px;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 991px) {
-    .custom-instagram-post {
-        flex: 0 0 calc(50% - 15px);
-        max-width: calc(50% - 15px);
-        min-width: 280px;
-    }
-    
-    .instagram-grid {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .instagram-container {
-        padding: 0 10px;
-    }
-    
-    .instagram-grid {
-        gap: 20px;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .custom-instagram-post {
-        flex: 0 1 400px;
-        max-width: 400px;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (max-width: 576px) {
-    .instagram-feed {
-        padding: var(--section-padding) 15px;
-    }
-    
-    .instagram-container {
-        padding: 0;
-    }
-    
-    .instagram-grid {
-        gap: 15px;
-        width: 100%;
-    }
-    
-    .custom-instagram-post {
-        flex: 0 1 350px;
-        max-width: 350px;
-        width: 100%;
-    }
-}
-
-/* Removed header-view-profile styles as they're no longer needed */
 
 .instagram-post-header {
     display: flex;
@@ -2388,6 +1931,7 @@ section h2 {
     padding: 14px 16px;
     border-bottom: 1px solid #efefef;
     background-color: #ffffff;
+    line-height: 1.4;
 }
 
 .instagram-profile-pic {
@@ -2404,20 +1948,20 @@ section h2 {
     border: 2px solid #eeeeee;
 }
 
-.instagram-profile-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
 .instagram-profile-pic img {
     width: 90%;
     height: 90%;
     object-fit: contain;
     max-width: 90%;
     padding: 2px;
+}
+
+.instagram-profile-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .instagram-username {
@@ -2480,7 +2024,11 @@ section h2 {
     padding: 8px 24px;
     border-radius: 4px;
     text-decoration: none;
-    transition: all 0.3s ease; /* Changed to 'all' to match other button transitions */
+    transition: all 0.3s ease;
+}
+
+.instagram-view-profile a i {
+    margin-right: 8px;
 }
 
 .instagram-view-profile a:hover {
@@ -2488,73 +2036,229 @@ section h2 {
     box-shadow: 0 5px 15px rgba(179, 135, 40, 0.3);
 }
 
-/* Responsive adjustments */
-@media (min-width: 1400px) {
-    .instagram-grid {
-        justify-content: center;
+/* Instagram Feed Responsive Styles */
+@media (max-width: 1100px) {
+    #instagram-posts {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 300px));
     }
 }
 
-@media (max-width: 1200px) {
-    .instagram-grid {
-        justify-content: flex-start;
+@media (max-width: 768px) {
+    .instagram-container {
+        padding: 0 10px;
     }
     
-    .custom-instagram-post {
-        width: 300px;
+    #instagram-posts {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        max-width: 600px;
     }
 }
 
-/* Improve responsiveness for small screens */
 @media (max-width: 576px) {
-    .custom-instagram-post {
-        width: 85vw;
-        max-width: 320px;
+    .instagram-feed {
+        padding: var(--section-padding) 15px;
     }
     
-    .instagram-grid {
-        justify-content: flex-start;
+    #instagram-posts {
         gap: 15px;
-        padding: 10px 15px;
+        grid-template-columns: minmax(280px, 350px);
     }
 }
 
 @media (max-width: 400px) {
-    .custom-instagram-post {
-        flex: 0 1 300px;
-        max-width: 300px;
-        width: 100%;
+    #instagram-posts {
+        grid-template-columns: minmax(280px, 300px);
+    }
+}
+
+/* Component System Styles */
+.component {
+    margin-bottom: 2rem;
+}
+
+/* Dynamic Feature Components */
+.dynamic-components {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
+.dynamic-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.dynamic-features .feature {
+    flex: 1;
+    min-width: 280px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dynamic-features .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Component-specific Button Styles */
+.btn-component {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color, #2a6c3b);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark, #225830);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--primary-color, #2a6c3b);
+    border: 1px solid var(--primary-color, #2a6c3b);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(42, 108, 59, 0.05);
+}
+
+/* Component-specific Card Styles */
+.card-component {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-component:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Component-specific Testimonial Styles */
+.testimonial-component {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.testimonial-component::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: rgba(42, 108, 59, 0.1);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* Component-specific Hero Styles */
+.hero-component {
+    padding: 6rem 0;
+    background-color: var(--light-background, #f9f9f9);
+    position: relative;
+}
+
+.hero-component .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+/* Media Queries for Components */
+@media (max-width: 768px) {
+    .dynamic-features {
+        flex-direction: column;
     }
     
-    .instagram-grid {
-        gap: 10px;
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
     }
 }
 
-.instagram-post-image a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+/* Fix feature sizes to ensure consistency */
+.features .feature,
+.intro-features .feature {
+    flex: 1;
+    min-width: 0;
+    flex-basis: 0;
+    padding: var(--space-sm);
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
 }
 
-.instagram-post-image a:hover {
-    transform: scale(1.02);
+/* Ensure dynamic features match original features */
+#intro-features .feature {
+    flex: 1;
+    flex-basis: 0;
+    min-width: 0;
+    text-align: center;
+    padding: var(--space-sm);
 }
 
-.instagram-post-image a:hover .instagram-play-overlay {
-    background-color: rgba(0, 0, 0, 0.25);
+#intro-features {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin: var(--space-sm) 0;
 }
 
-/* Make the images properly adapt to the new link structure */
-.instagram-post-image a img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media (max-width: 768px) {
+    #intro-features {
+        flex-direction: column;
+    }
+    
+    #intro-features .feature {
+        margin-bottom: 1.5rem;
+    }
 }
 
+/* Ensure dynamic features match original features */

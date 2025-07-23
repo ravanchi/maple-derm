@@ -13,6 +13,7 @@
 <body>
     <div id="header-placeholder"></div>
 
+    <!-- Hero section will remain static - it has specialized structure -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -30,55 +31,18 @@
     <section class="intro">
         <div class="container">
             <h2>From diagnosis to rejuvenation, we provide personalized dermatology backed by clinical precision.</h2>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3>Personalized care for all skin types</h3>
-                    <p>We tailor every treatment to your skin's unique needs — across all ages, tones, and concerns.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Board-certified dermatologists</h3>
-                    <p>Your care is delivered by experienced specialists with advanced training in medical, cosmetic, and surgical dermatology.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3>Advanced tools. Proven methods.</h3>
-                    <p>We use evidence-based treatments and the latest technology to ensure precision and results.</p>
-                </div>
+            <div class="features" id="intro-features">
+                <!-- Features will be populated using component system -->
             </div>
-            <a href="about.html" class="text-link">Learn more about us</a>
+            <div id="about-link-container"></div>
         </div>
     </section>
 
     <section class="services-testimonials" id="services">
         <div class="container">
             <h2>Discover our comprehensive dermatology services</h2>
-            <div class="service-cards">
-                <div class="service-card" id="medical">
-                    <div class="service-icon"><i class="far fa-hospital"></i></div>
-                    <h3>Medical</h3>
-                    <p>Restorative treatments designed to renew your skin—inside and out.</p>
-                    <a href="#" class="text-link">Learn more →</a>
-                </div>
-                <div class="service-card" id="cosmetic">
-                    <div class="service-icon"><i class="far fa-smile"></i></div>
-                    <h3>Cosmetic</h3>
-                    <p>Treatments designed to reveal your most confident self.</p>
-                    <a href="#" class="text-link">Learn more →</a>
-                </div>
-                <div class="service-card" id="maintenance">
-                    <div class="service-icon"><i class="far fa-calendar-check"></i></div>
-                    <h3>Maintenance</h3>
-                    <p>Ongoing care for lasting skin health and natural glow.</p>
-                    <a href="#" class="text-link">Learn more →</a>
-                </div>
+            <div class="service-cards" id="service-cards">
+                <!-- Service cards will be populated using component system -->
             </div>
             
             <div class="testimonial-slider">
@@ -108,8 +72,112 @@
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/scroll-animations.js"></script>
     <script src="assets/js/components.js"></script>
+    <script>
+        // Initialize components after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create intro features using component system
+            const introFeatures = [
+                {
+                    icon: 'fas fa-hand-holding-heart',
+                    title: 'Personalized care for all skin types',
+                    description: 'We tailor every treatment to your skin\'s unique needs — across all ages, tones, and concerns.'
+                },
+                {
+                    icon: 'fas fa-user-md',
+                    title: 'Board-certified dermatologists',
+                    description: 'Your care is delivered by experienced specialists with advanced training in medical, cosmetic, and surgical dermatology.'
+                },
+                {
+                    icon: 'fas fa-microscope',
+                    title: 'Advanced tools. Proven methods.',
+                    description: 'We use evidence-based treatments and the latest technology to ensure precision and results.'
+                }
+            ];
+            
+            const featuresContainer = document.getElementById('intro-features');
+            if (featuresContainer) {
+                // Clear container
+                featuresContainer.innerHTML = '';
+                
+                // Create features with equal width wrappers
+                introFeatures.forEach(feature => {
+                    const featureWrapper = document.createElement('div');
+                    featureWrapper.style.flex = '1';
+                    featureWrapper.style.minWidth = '0';
+                    featuresContainer.appendChild(featureWrapper);
+                    
+                    ComponentManager.components.featureCard.createFeature(
+                        featureWrapper, 
+                        feature.icon, 
+                        feature.title, 
+                        feature.description
+                    );
+                });
+            }
+            
+            // Create "Learn more about us" link using component system
+            const aboutLinkContainer = document.getElementById('about-link-container');
+            if (aboutLinkContainer) {
+                ComponentManager.components.button.createTextLink(
+                    aboutLinkContainer,
+                    'Learn more about us',
+                    'about.html'
+                );
+            }
+            
+            // Create service cards using component system
+            const serviceCardsData = [
+                {
+                    id: 'medical',
+                    icon: 'far fa-hospital',
+                    title: 'Medical',
+                    description: 'Restorative treatments designed to renew your skin—inside and out.',
+                    linkText: 'Learn more →',
+                    linkUrl: '#'
+                },
+                {
+                    id: 'cosmetic',
+                    icon: 'far fa-smile',
+                    title: 'Cosmetic',
+                    description: 'Treatments designed to reveal your most confident self.',
+                    linkText: 'Learn more →',
+                    linkUrl: '#'
+                },
+                {
+                    id: 'maintenance',
+                    icon: 'far fa-calendar-check',
+                    title: 'Maintenance',
+                    description: 'Ongoing care for lasting skin health and natural glow.',
+                    linkText: 'Learn more →',
+                    linkUrl: '#'
+                }
+            ];
+            
+            const serviceCardsContainer = document.getElementById('service-cards');
+            if (serviceCardsContainer) {
+                // Clear container
+                serviceCardsContainer.innerHTML = '';
+                
+                // Create service cards using component system
+                serviceCardsData.forEach(service => {
+                    const serviceCardEl = document.createElement('div');
+                    serviceCardEl.style.flex = '1';
+                    serviceCardsContainer.appendChild(serviceCardEl);
+                    ComponentManager.components.featureCard.createServiceCard(
+                        serviceCardEl,
+                        service.id,
+                        service.icon,
+                        service.title,
+                        service.description,
+                        service.linkText,
+                        service.linkUrl
+                    );
+                });
+            }
+        });
+    </script>
+    <script src="assets/js/scroll-animations.js"></script>
     <script src="assets/js/testimonial-slider.js"></script>
 </body>
 </html> 

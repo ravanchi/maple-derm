@@ -13,12 +13,7 @@
 <body>
     <div id="header-placeholder"></div>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Meet Our <em>Expert</em> Team</h1>
-            <p class="page-subtitle">Board-certified dermatologists providing comprehensive care for all skin types.</p>
-        </div>
-    </section>
+    <div id="page-hero-container"></div>
 
     <section class="founding-doctor">
         <div class="container">
@@ -107,8 +102,22 @@
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/scroll-animations.js"></script>
     <script src="assets/js/components.js"></script>
+    <script>
+        // Initialize the page hero using the component system
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create page hero component
+            const heroContainer = document.getElementById('page-hero-container');
+            if (heroContainer) {
+                ComponentManager.components.hero.createPageHero(
+                    heroContainer,
+                    'Meet Our <em>Expert</em> Team',
+                    'Board-certified dermatologists providing comprehensive care for all skin types.'
+                );
+            }
+        });
+    </script>
+    <script src="assets/js/scroll-animations.js"></script>
     <script src="assets/js/testimonial-slider.js"></script>
 </body>
 </html> 
