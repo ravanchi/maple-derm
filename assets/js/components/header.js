@@ -33,7 +33,7 @@ const HeaderComponent = {
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="media.html">Media</a></li>
-                        <li class="cta-button"><a href="book-appointment.html">Book an Appointment</a></li>
+                        <li class="cta-button"><a href="contact-us.html">Contact Us</a></li>
                         <li class="social-nav mobile-menu-social">
                             <a href="https://www.instagram.com/maplederm/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="https://www.tiktok.com/@maplederm" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>

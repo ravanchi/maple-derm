@@ -12,7 +12,7 @@ const FooterComponent = {
             <div class="container">
                 <div class="footer-cta">
                     <h2>Begin your path to <em>expert-led</em> skin health</h2>
-                    <a href="book-appointment.html" class="btn primary-btn">Book an Appointment →</a>
+                    <a href="contact-us.html" class="btn primary-btn">Contact Us →</a>
                     <p>Still have questions?<br>Take a look through our <a href="#faq" class="text-link no-underline">FAQ</a></p>
                 </div>
                 

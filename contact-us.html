@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book an Appointment - MapleDerm</title>
-    <meta name="description" content="Book your appointment with MapleDerm's expert dermatologists. Find directions, business hours, and contact information.">
+    <title>Contact Us - MapleDerm</title>
+    <meta name="description" content="Contact MapleDerm's expert dermatologists. Find directions, business hours, and contact information.">
     <script src="assets/js/shared-head.js"></script>
 </head>
 <body>
 
     <div id="header-placeholder"></div>
 
-    <div id="page-hero-container"></div>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact <em>Us</em></h1>
+            <p class="page-subtitle">Get in touch with MapleDerm's dermatologists for all your skin health needs — expertly delivered with personalized care and the latest technology.</p>
+        </div>
+    </section>
 
     <section class="contact-info">
         <div class="container">
@@ -51,11 +56,15 @@
         </div>
     </section>
 
-    <section class="booking-steps">
+    <section class="contact-steps">
         <div class="container">
-            <h2>Appointment <em>Process</em></h2>
+            <h2>Your <em>Care</em> Journey</h2>
             <div class="process-description">
                 <p>We know visiting a dermatologist can feel overwhelming — that's why we've designed a clear, supportive process. From booking to follow-up, we keep you informed and cared for every step of the way.</p>
+                
+                <div class="disclaimer">
+                    <p><strong>Please note:</strong> A doctor's referral is required for all medical consultations, including for: skin cancers, mole or lesion checks, cysts, lipomas, acne, rosacea, psoriasis, warts, melasma, excessive sweating (hyperhidrosis), scars and other skin conditions.</p>
+                </div>
             </div>
             <div class="steps-grid">
                 <div class="step">
@@ -106,19 +115,8 @@
     <script src="assets/js/components.js" type="module"></script>
     <script type="module">
         import { ComponentManager } from './assets/js/components/index.js';
-        
-        // Initialize components
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create page hero component
-            const heroContainer = document.getElementById('page-hero-container');
-            if (heroContainer) {
-                ComponentManager.components.hero.createPageHero(
-                    heroContainer,
-                    'Book Your <em>Appointment</em>',
-                    'Book your consultation for medical or cosmetic dermatology — expertly delivered with personalized care and the latest technology.'
-                );
-            }
 
+        document.addEventListener('DOMContentLoaded', function() {
             // Create Get Directions link
             const directionsLinkContainer = document.getElementById('directions-link');
             if (directionsLinkContainer) {
