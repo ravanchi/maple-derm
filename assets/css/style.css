@@ -356,7 +356,6 @@ em {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 .hero-image-container::after {
     content: '';
@@ -374,7 +373,6 @@ em {
     object-fit: cover;
     cursor: default;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     position: relative;
     z-index: 0;
 }
@@ -853,7 +851,6 @@ em {
         height: 280px; 
         border-radius: 10px; 
         overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
         margin-bottom: 0; 
     }
 
@@ -862,7 +859,6 @@ em {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     }
     
     .hero-content {
