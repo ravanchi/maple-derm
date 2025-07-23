@@ -3,6 +3,9 @@ const HeaderComponent = {
         this.injectHeader();
         this.initHeaderScrollEffect();
         this.initMobileMenu();
+        this.setActiveNavItem();
+        this.setupNavHoverEffect();
+        this.handleActiveTabClick();
     },
     
     injectHeader: function() {
@@ -117,6 +120,80 @@ const HeaderComponent = {
                     item.classList.remove('active');
                 });
             }
+        });
+    },
+
+    // Add a method to set the active nav item based on the current page
+    setActiveNavItem: function() {
+        // Get the current page filename
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        // If we're on the homepage (no pathname or index.html)
+        if (currentPage === '' || currentPage === 'index.html') {
+            // Don't highlight any nav items for the homepage
+            return;
+        }
+        
+        // Find the navigation link that matches the current page
+        const navLinks = document.querySelectorAll('.main-nav li:not(.cta-button) a');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href === currentPage) {
+                link.parentElement.classList.add('active');
+            }
+        });
+        
+        // Handle CTA button separately (for contact-us.html)
+        const ctaLink = document.querySelector('.main-nav .cta-button a');
+        if (ctaLink && ctaLink.getAttribute('href') === currentPage) {
+            ctaLink.parentElement.classList.add('active');
+        }
+    },
+
+    // Add method to handle hover effects on nav items
+    setupNavHoverEffect: function() {
+        const navItems = document.querySelectorAll('.main-nav li');
+        const activeNavItem = document.querySelector('.main-nav li.active');
+        
+        // If there's an active nav item
+        if (activeNavItem) {
+            navItems.forEach(item => {
+                // When hovering over any nav item
+                item.addEventListener('mouseenter', function() {
+                    // If this is not the active item, hide the active underline
+                    if (this !== activeNavItem) {
+                        activeNavItem.classList.add('hide-underline');
+                    }
+                });
+                
+                // When leaving any nav item
+                item.addEventListener('mouseleave', function() {
+                    // Restore the active underline
+                    activeNavItem.classList.remove('hide-underline');
+                });
+            });
+        }
+    },
+
+    // Add method to handle clicks on the active navigation item
+    handleActiveTabClick: function() {
+        // Find any active navigation items
+        const activeItems = document.querySelectorAll('.main-nav li.active a');
+        
+        activeItems.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Check if this is a full page link (not an anchor link like #services)
+                if (!this.getAttribute('href').startsWith('#')) {
+                    // Prevent default navigation
+                    e.preventDefault();
+                    
+                    // Scroll to top with smooth animation
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     }
 };

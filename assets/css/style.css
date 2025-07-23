@@ -261,6 +261,18 @@ em {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.main-nav .active a:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hide the underline when the active item has the hide-underline class */
+.main-nav li.active.hide-underline a:after {
+    transform: scaleX(0);
+    transition: transform 0.2s;
+}
+
 .cta-button a {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -280,6 +292,12 @@ em {
     transform: translateY(-2px);
     box-shadow: none;
 }
+
+.cta-button.active a {
+    background-color: var(--accent-color);
+    box-shadow: none;
+}
+
 /* Override the underline effect for the CTA button */
 .cta-button a:after {
     display: none;
