@@ -6,6 +6,9 @@ const FooterComponent = {
     injectFooter: function() {
         const footerPlaceholder = document.getElementById('footer-placeholder');
         if (!footerPlaceholder) return;
+        
+        // Get current year for copyright
+        const currentYear = new Date().getFullYear();
 
         const footerHTML = `
         <footer class="site-footer" id="contact">
@@ -28,7 +31,7 @@ const FooterComponent = {
                         </div>
                         <div class="footer-legal">
                             <p><a href="#">Privacy Policy</a></p>
-                            <p>© <script>document.write(new Date().getFullYear());</script> MapleDerm</p>
+                            <p>© ${currentYear} MapleDerm</p>
                             <p class="made-with">Made with <span class="heart">❤️</span> in Canada</p>
                         </div>
                     </div>
