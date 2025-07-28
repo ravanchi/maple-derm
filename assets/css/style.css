@@ -297,6 +297,81 @@ em {
 .cta-button a:after {
     display: none;
 }
+
+.privacy-section {
+    background-color: #fff;
+}
+
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-update {
+    font-size: 0.9rem;
+    color: #999999;
+    margin-bottom: var(--space-sm);
+    text-align: left;
+    font-style: italic;
+}
+
+.privacy-content h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+    color: var(----text-color);
+    font-size: 1.5rem;
+}
+
+.privacy-content h3 {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-xs);
+    font-size: 1.2rem;
+    color: var(----text-color);
+}
+
+.privacy-content ul {
+    margin-bottom: var(--space-sm);
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.privacy-content ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    display: list-item;
+}
+
+.privacy-content p {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+.privacy-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.privacy-content a:hover {
+    color: var(--accent-color);
+}
+
+.contact-details {
+    background-color: var(--bg-accent);
+    padding: var(--space-sm);
+    border-radius: 8px;
+    margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .privacy-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .privacy-content h3 {
+        font-size: 1.1rem;
+    }
+}
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;

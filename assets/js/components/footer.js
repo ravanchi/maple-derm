@@ -40,7 +40,7 @@ const FooterComponent = {
                             <p>P: <a href="tel:+19058324747">(905) 832-4747</a> | F: <a href="tel:+19058324797">(905) 832-4797</a></p>
                         </div>
                         <div class="footer-legal">
-                            <p><a href="#">Privacy Policy</a></p>
+                            <p><a href="privacy-policy.html">Privacy Policy</a></p>
                             <p>© ${new Date().getFullYear()} MapleDerm</p>
                             <p class="made-with">Made with <span class="heart">❤️</span> in Canada</p>
                         </div>
