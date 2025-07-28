@@ -161,19 +161,24 @@
             let resizeTimeout;
             let lastWindowWidth = window.innerWidth;
             
-            // Only reset on significant width changes, not on scroll-triggered resize
+            // Only reset on significant width changes that require layout adjustments
             window.addEventListener('resize', function() {
                 // Clear any existing timeout to debounce the resize event
                 clearTimeout(resizeTimeout);
                 
                 // Set a timeout to execute after resize events have stopped
                 resizeTimeout = setTimeout(function() {
-                    // Only close FAQ items if width actually changed (not just height)
+                    // Only close FAQ items if width changed significantly (layout breakpoint)
                     const currentWindowWidth = window.innerWidth;
-                    if (Math.abs(currentWindowWidth - lastWindowWidth) > 20) {
+                    const breakpointChange = 
+                        (lastWindowWidth < 768 && currentWindowWidth >= 768) || 
+                        (lastWindowWidth >= 768 && currentWindowWidth < 768);
+                    
+                    if (breakpointChange) {
                         closeAllFaqItems();
-                        lastWindowWidth = currentWindowWidth;
                     }
+                    
+                    lastWindowWidth = currentWindowWidth;
                 }, 250);
             });
             
@@ -194,9 +199,52 @@
             }
             
             faqItems.forEach(item => {
-                item.addEventListener('click', function() {
+                // Variables to track touch behavior
+                let touchStartY = 0;
+                let touchStartX = 0;
+                let isTouchMoved = false;
+                
+                // Handle touch start
+                item.addEventListener('touchstart', function(e) {
+                    touchStartY = e.touches[0].clientY;
+                    touchStartX = e.touches[0].clientX;
+                    isTouchMoved = false;
+                    
+                    // We don't add touch-active class here anymore, 
+                    // only on actual click after confirming it wasn't a scroll
+                }, { passive: true });
+                
+                // Handle touch move to detect scrolling
+                item.addEventListener('touchmove', function(e) {
+                    if (!isTouchMoved) {
+                        const touchY = e.touches[0].clientY;
+                        const touchX = e.touches[0].clientX;
+                        
+                        // If moved more than threshold, consider it a scroll not a tap
+                        const moveThreshold = 10; // pixels
+                        if (Math.abs(touchY - touchStartY) > moveThreshold || 
+                            Math.abs(touchX - touchStartX) > moveThreshold) {
+                            isTouchMoved = true;
+                            // Immediately remove touch-active to prevent highlighting during scroll
+                            this.classList.remove('touch-active');
+                        }
+                    }
+                }, { passive: true });
+                
+                // Handle touch end
+                item.addEventListener('touchend', function() {
+                    // Clean up any lingering touch-active classes
+                    this.classList.remove('touch-active');
+                }, { passive: true });
+                
+                // Use click event which only fires when not scrolling
+                item.addEventListener('click', function(e) {
+                    // Don't process click if it was actually a scroll
+                    if (isTouchMoved) {
+                        return;
+                    }
+                    
                     const faqItem = this.parentNode;
-                    const faqAnswer = faqItem.querySelector('.faq-answer');
                     const isCurrentlyActive = faqItem.classList.contains('active');
                     const icon = this.querySelector('.faq-icon i');
                     
@@ -205,40 +253,17 @@
                         question.classList.remove('touch-active');
                     });
                     
-                    // Close any other active items
-                    document.querySelectorAll('.faq-item.active').forEach(activeItem => {
-                        if (activeItem !== faqItem) {
-                            const activeIcon = activeItem.querySelector('.faq-icon i');
-                            activeIcon.classList.remove('fa-chevron-up');
-                            activeIcon.classList.add('fa-chevron-down');
-                            activeItem.classList.remove('active');
-                        }
-                    });
-                    
+                    // Toggle the clicked item's state without affecting others
                     if (!isCurrentlyActive) {
                         faqItem.classList.add('active');
                         icon.classList.remove('fa-chevron-down');
                         icon.classList.add('fa-chevron-up');
-                        
-                        // Auto-scroll code removed as requested - users will scroll themselves if needed
                     } else {
                         icon.classList.remove('fa-chevron-up');
                         icon.classList.add('fa-chevron-down');
                         faqItem.classList.remove('active');
                     }
                 });
-                
-                // Add touch start and end handlers to manage the visual feedback
-                item.addEventListener('touchstart', function() {
-                    this.classList.add('touch-active');
-                }, { passive: true });
-                
-                item.addEventListener('touchend', function() {
-                    // Use setTimeout to ensure the active state is visible briefly
-                    setTimeout(() => {
-                        this.classList.remove('touch-active');
-                    }, 300);
-                }, { passive: true });
             });
             
             // Initially close all items
