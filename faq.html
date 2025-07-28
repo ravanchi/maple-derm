@@ -200,6 +200,11 @@
                     const isCurrentlyActive = faqItem.classList.contains('active');
                     const icon = this.querySelector('.faq-icon i');
                     
+                    // Remove any touch-active class that might be persisting
+                    document.querySelectorAll('.faq-question').forEach(question => {
+                        question.classList.remove('touch-active');
+                    });
+                    
                     // Close any other active items
                     document.querySelectorAll('.faq-item.active').forEach(activeItem => {
                         if (activeItem !== faqItem) {
@@ -215,29 +220,25 @@
                         icon.classList.remove('fa-chevron-down');
                         icon.classList.add('fa-chevron-up');
                         
-                        // Only auto-scroll on mobile devices
-                        const isMobileDevice = window.innerWidth <= 768;
-                        if (isMobileDevice) {
-                            // Scroll the FAQ into view with a small delay to allow for expansion
-                            setTimeout(() => {
-                                // Calculate position for scrolling
-                                const headerOffset = 100; // Account for fixed header
-                                const faqItemPosition = faqItem.getBoundingClientRect().top;
-                                const offsetPosition = faqItemPosition + window.pageYOffset - headerOffset;
-                                
-                                // Smooth scroll to the expanded FAQ
-                                window.scrollTo({
-                                    top: offsetPosition,
-                                    behavior: 'smooth'
-                                });
-                            }, 150);
-                        }
+                        // Auto-scroll code removed as requested - users will scroll themselves if needed
                     } else {
                         icon.classList.remove('fa-chevron-up');
                         icon.classList.add('fa-chevron-down');
                         faqItem.classList.remove('active');
                     }
                 });
+                
+                // Add touch start and end handlers to manage the visual feedback
+                item.addEventListener('touchstart', function() {
+                    this.classList.add('touch-active');
+                }, { passive: true });
+                
+                item.addEventListener('touchend', function() {
+                    // Use setTimeout to ensure the active state is visible briefly
+                    setTimeout(() => {
+                        this.classList.remove('touch-active');
+                    }, 300);
+                }, { passive: true });
             });
             
             // Initially close all items

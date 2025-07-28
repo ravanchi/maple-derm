@@ -2577,10 +2577,35 @@ section h2 {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Remove default tap highlight color */
+    user-select: none; /* Prevent text selection when tapping */
 }
 
-.faq-question:hover {
-    background-color: var(--bg-accent);
+/* Only apply hover effect on non-touch devices */
+@media (hover: hover) {
+    .faq-question:hover {
+        background-color: var(--bg-accent);
+    }
+}
+
+/* Override for touch devices to prevent persistent highlight */
+@media (hover: none) {
+    .faq-question:hover,
+    .faq-question:active {
+        background-color: transparent;
+    }
+    
+    /* Add a touch active state that doesn't persist */
+    .faq-question:active,
+    .faq-question.touch-active {
+        background-color: rgba(194, 161, 77, 0.05); /* Lighter version of primary color */
+        transition: background-color 0.1s;
+    }
+    
+    /* Ensure the active FAQ question doesn't remain highlighted */
+    .faq-item.active .faq-question {
+        background-color: transparent;
+    }
 }
 
 .faq-question h3 {
