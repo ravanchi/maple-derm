@@ -33,7 +33,7 @@ const HeaderComponent = {
                         <li class="mobile-only"><a href="#medical">Medical</a></li>
                         <li class="mobile-only"><a href="#cosmetic">Cosmetic</a></li>
                         <li class="mobile-only"><a href="#maintenance">Maintenance</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="media.html">Media</a></li>
                         <li class="cta-button"><a href="contact-us.html">Contact Us</a></li>

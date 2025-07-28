@@ -6,9 +6,19 @@ const FooterComponent = {
     injectFooter: function() {
         const footerPlaceholder = document.getElementById('footer-placeholder');
         if (!footerPlaceholder) return;
+
+        // Check if current page is FAQ page
+        const currentPage = window.location.pathname;
+        const isFaqPage = currentPage.includes('faq.html');
         
-        // Get current year for copyright
-        const currentYear = new Date().getFullYear();
+        // Determine the appropriate secondary text based on the current page
+        let secondaryText = '';
+        
+        if (isFaqPage) {
+            secondaryText = '<p>Still have questions?<br>Contact our friendly staff who will be happy to assist you with any additional questions.</p>';
+        } else {
+            secondaryText = '<p>Still have questions?<br>Take a look through our <a href="faq.html" class="text-link no-underline">FAQ</a></p>';
+        }
 
         const footerHTML = `
         <footer class="site-footer" id="contact">
@@ -16,7 +26,7 @@ const FooterComponent = {
                 <div class="footer-cta">
                     <h2>Begin your path to <em>expert-led</em> skin health</h2>
                     <a href="contact-us.html" class="btn primary-btn">Contact Us →</a>
-                    <p>Still have questions?<br>Take a look through our <a href="#faq" class="text-link no-underline">FAQ</a></p>
+                    ${secondaryText}
                 </div>
                 
                 <div class="footer-content">
@@ -31,7 +41,7 @@ const FooterComponent = {
                         </div>
                         <div class="footer-legal">
                             <p><a href="#">Privacy Policy</a></p>
-                            <p>© ${currentYear} MapleDerm</p>
+                            <p>© ${new Date().getFullYear()} MapleDerm</p>
                             <p class="made-with">Made with <span class="heart">❤️</span> in Canada</p>
                         </div>
                     </div>
