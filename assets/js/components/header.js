@@ -6,6 +6,7 @@ const HeaderComponent = {
         this.setActiveNavItem();
         this.setupNavHoverEffect();
         this.handleActiveTabClick();
+        this.handleAllNavLinks();
     },
     
     injectHeader: function() {
@@ -177,17 +178,76 @@ const HeaderComponent = {
 
     // Add method to handle clicks on the active navigation item
     handleActiveTabClick: function() {
+        const mobileBreakpoint = 768;
+        const mainNav = document.querySelector('.main-nav');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        
         // Find any active navigation items
         const activeItems = document.querySelectorAll('.main-nav li.active a');
         
         activeItems.forEach(link => {
             link.addEventListener('click', function(e) {
-                // Check if this is a full page link (not an anchor link like #services)
+                // If on mobile and menu is open, close it
+                if (window.innerWidth <= mobileBreakpoint && mainNav && mainNav.classList.contains('active')) {
+                    e.preventDefault(); // Prevent default navigation
+                    mainNav.classList.remove('active');
+                    if (mobileMenuToggle) {
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                    
+                    // If this is not an anchor link, scroll to top
+                    if (!this.getAttribute('href').startsWith('#')) {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                    return;
+                }
+                
+                // For desktop or other cases
                 if (!this.getAttribute('href').startsWith('#')) {
                     // Prevent default navigation
                     e.preventDefault();
                     
                     // Scroll to top with smooth animation
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    },
+
+    // Add method to handle all nav links
+    handleAllNavLinks: function() {
+        const mobileBreakpoint = 768;
+        const mainNav = document.querySelector('.main-nav');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Get all navigation links (including non-active ones)
+        const navLinks = document.querySelectorAll('.main-nav a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // If on mobile, menu is open, and link points to current page
+                if (window.innerWidth <= mobileBreakpoint && 
+                    mainNav && mainNav.classList.contains('active') && 
+                    href === currentPage) {
+                    
+                    e.preventDefault();
+                    
+                    // Close the mobile menu
+                    mainNav.classList.remove('active');
+                    if (mobileMenuToggle) {
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                    
+                    // Scroll to top of the page
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'

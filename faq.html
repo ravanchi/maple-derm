@@ -157,8 +157,27 @@
                 });
             }
             
-            // Reset all items on page load, resize or orientation change
-            window.addEventListener('resize', closeAllFaqItems);
+            // Use resize debouncing to prevent triggering on small viewport changes
+            let resizeTimeout;
+            let lastWindowWidth = window.innerWidth;
+            
+            // Only reset on significant width changes, not on scroll-triggered resize
+            window.addEventListener('resize', function() {
+                // Clear any existing timeout to debounce the resize event
+                clearTimeout(resizeTimeout);
+                
+                // Set a timeout to execute after resize events have stopped
+                resizeTimeout = setTimeout(function() {
+                    // Only close FAQ items if width actually changed (not just height)
+                    const currentWindowWidth = window.innerWidth;
+                    if (Math.abs(currentWindowWidth - lastWindowWidth) > 20) {
+                        closeAllFaqItems();
+                        lastWindowWidth = currentWindowWidth;
+                    }
+                }, 250);
+            });
+            
+            // Handle orientation change separately
             window.addEventListener('orientationchange', closeAllFaqItems);
             
             function getContentHeight(element) {
@@ -195,6 +214,24 @@
                         faqItem.classList.add('active');
                         icon.classList.remove('fa-chevron-down');
                         icon.classList.add('fa-chevron-up');
+                        
+                        // Only auto-scroll on mobile devices
+                        const isMobileDevice = window.innerWidth <= 768;
+                        if (isMobileDevice) {
+                            // Scroll the FAQ into view with a small delay to allow for expansion
+                            setTimeout(() => {
+                                // Calculate position for scrolling
+                                const headerOffset = 100; // Account for fixed header
+                                const faqItemPosition = faqItem.getBoundingClientRect().top;
+                                const offsetPosition = faqItemPosition + window.pageYOffset - headerOffset;
+                                
+                                // Smooth scroll to the expanded FAQ
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }, 150);
+                        }
                     } else {
                         icon.classList.remove('fa-chevron-up');
                         icon.classList.add('fa-chevron-down');

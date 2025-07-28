@@ -28,12 +28,15 @@ const TestimonialSlider = {
     
     currentIndex: 0,
     slideInterval: null,
+    touchStartX: 0,
+    touchEndX: 0,
     
     init: function() {
         const testimonialContent = document.querySelector('.testimonial-content');
+        const testimonialSlider = document.querySelector('.testimonial-slider');
         const dots = document.querySelectorAll('.slider-dot');
         
-        if (!testimonialContent || !dots.length) {
+        if (!testimonialContent || !dots.length || !testimonialSlider) {
             return;
         }
         
@@ -63,7 +66,89 @@ const TestimonialSlider = {
             this.resetSlideTimer();
         });
         
+        // Add touch event listeners for mobile swipe functionality
+        testimonialSlider.addEventListener('touchstart', (e) => this.handleTouchStart(e), false);
+        testimonialSlider.addEventListener('touchmove', (e) => this.handleTouchMove(e), false);
+        testimonialSlider.addEventListener('touchend', (e) => this.handleTouchEnd(e), false);
+        
         // Start the auto-advance timer
+        this.resetSlideTimer();
+    },
+    
+    // Handle touch start event
+    handleTouchStart: function(e) {
+        // Store the initial touch position
+        this.touchStartX = e.changedTouches[0].screenX;
+        
+        // Get testimonial content
+        const testimonialContent = document.querySelector('.testimonial-content');
+        
+        // Pause the auto-advance while touching
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+            this.slideInterval = null;
+        }
+        
+        // Add class to indicate touch is active
+        if (testimonialContent) {
+            testimonialContent.classList.add('touching');
+        }
+    },
+    
+    // Handle touch move event for visual feedback
+    handleTouchMove: function(e) {
+        // Only if we have a touch start position
+        if (this.touchStartX === 0) return;
+        
+        const touchX = e.changedTouches[0].screenX;
+        const diffX = touchX - this.touchStartX;
+        
+        // Get testimonial content
+        const testimonialContent = document.querySelector('.testimonial-content');
+        if (!testimonialContent) return;
+        
+        // Limit the amount of movement (resistance effect)
+        const resistance = 3;
+        const translateX = diffX / resistance;
+        
+        // Apply the transform but with constraints to avoid moving too far
+        if (Math.abs(translateX) < 50) {
+            testimonialContent.style.transform = `translateX(${translateX}px)`;
+        }
+    },
+    
+    // Handle touch end event
+    handleTouchEnd: function(e) {
+        // Store the final touch position
+        this.touchEndX = e.changedTouches[0].screenX;
+        
+        // Calculate swipe distance
+        const swipeDistance = this.touchEndX - this.touchStartX;
+        
+        // Minimum distance required to register as a swipe (pixels)
+        const minSwipeDistance = 50;
+        
+        // Get testimonial content
+        const testimonialContent = document.querySelector('.testimonial-content');
+        
+        // Remove touch active class
+        if (testimonialContent) {
+            testimonialContent.classList.remove('touching');
+            testimonialContent.style.transform = '';
+        }
+        
+        // Determine swipe direction and navigate if threshold is met
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swiped right - go to previous slide
+                this.goToSlide(this.currentIndex - 1);
+            } else {
+                // Swiped left - go to next slide
+                this.goToSlide(this.currentIndex + 1);
+            }
+        }
+        
+        // Resume auto-advance timer
         this.resetSlideTimer();
     },
     

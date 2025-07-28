@@ -609,6 +609,32 @@ em {
     margin: 0 auto;
 }
 
+.swipe-indicator {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .swipe-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+    
+    .swipe-indicator i {
+        animation: swipe-hint 1.5s ease-in-out infinite;
+    }
+}
+
+@keyframes swipe-hint {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(8px); }
+}
+
 .testimonial {
     background-color: rgba(255, 255, 255, 0.9);
     padding: var(--space-md);
@@ -697,6 +723,10 @@ em {
     .testimonial-content {
         min-height: 240px;
         padding: var(--space-sm) var(--space-xs);
+        transition: opacity 0.5s ease, transform 0.3s ease;
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        user-select: none;
     }
     
     .testimonial p {
@@ -2592,7 +2622,7 @@ section h2 {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 1000px;
+    max-height: 2000px; /* Increase maximum height to accommodate longer content */
     opacity: 1;
     padding-top: 0;
     padding-right: var(--space-sm);
@@ -2603,6 +2633,8 @@ section h2 {
                 padding-bottom 0.2s ease,
                 border-top 0.1s ease;
     border-top: 1px solid var(--border-color);
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1; /* Prevent content from disappearing */
 }
 
 .faq-question {
