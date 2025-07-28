@@ -147,6 +147,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-question');
             
+            // Function to close all FAQ items
+            function closeAllFaqItems() {
+                document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+                    const activeIcon = activeItem.querySelector('.faq-icon i');
+                    activeIcon.classList.remove('fa-chevron-up');
+                    activeIcon.classList.add('fa-chevron-down');
+                    activeItem.classList.remove('active');
+                });
+            }
+            
+            // Reset all items on page load, resize or orientation change
+            window.addEventListener('resize', closeAllFaqItems);
+            window.addEventListener('orientationchange', closeAllFaqItems);
+            
             function getContentHeight(element) {
                 const clone = element.cloneNode(true);
                 clone.style.maxHeight = 'none';
@@ -167,6 +181,7 @@
                     const isCurrentlyActive = faqItem.classList.contains('active');
                     const icon = this.querySelector('.faq-icon i');
                     
+                    // Close any other active items
                     document.querySelectorAll('.faq-item.active').forEach(activeItem => {
                         if (activeItem !== faqItem) {
                             const activeIcon = activeItem.querySelector('.faq-icon i');
@@ -187,6 +202,9 @@
                     }
                 });
             });
+            
+            // Initially close all items
+            closeAllFaqItems();
         });
     </script>
 </body>

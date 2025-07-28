@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     checkMobileState();
     
-    if (mobileMenuToggle) {
+    if (mobileMenuToggle && mainNav) {
         mobileMenuToggle.addEventListener('click', function() {
             mainNav.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
@@ -50,19 +50,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const header = document.querySelector('.site-header');
     
-    if (window.scrollY > 10) {
-        header.classList.add('scrolled');
-    }
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 10) {
+    // Only proceed with header-related code if the header exists
+    if (header) {
+        if (window.scrollY > 10) {
             header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
         }
-    });
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
+                if (mainNav && mainNav.classList.contains('active') && mobileMenuToggle) {
                     mainNav.classList.remove('active');
                     mobileMenuToggle.classList.remove('active');
                 }

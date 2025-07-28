@@ -63,7 +63,7 @@ const SocialMediaComponent = {
         }
         
         const viewProfileHTML = `
-        <div class="social-view-profile">
+        <div class="instagram-view-profile">
             <a href="${url}" class="btn primary-btn" target="_blank">
                 <i class="${icon}"></i>&nbsp; ${buttonText || `View more on ${platform}`}
             </a>
