@@ -696,6 +696,7 @@ em {
     
     .testimonial-content {
         min-height: 240px;
+        padding: var(--space-sm) var(--space-xs);
     }
     
     .testimonial p {
@@ -709,6 +710,7 @@ em {
     
     .testimonial-content {
         min-height: 280px;
+        padding: var(--space-sm) var(--space-xs-mobile);
     }
 }
 .footer-cta .btn {
@@ -860,6 +862,11 @@ em {
     .hero-container {
         padding: 0 var(--space-sm);
     }
+    
+    /* Reduce testimonial horizontal padding on mobile */
+    .testimonial-content {
+        padding: var(--space-md) var(--space-sm);
+    }
 }
 @media (max-width: 1024px) and (min-width: 769px) {
     .main-nav ul {
@@ -915,6 +922,32 @@ em {
     /* Reduce vertical padding for service cards on mobile */
     .service-card {
         padding: var(--space-sm) var(--space-sm);
+    }
+    
+    /* Full-screen mobile menu styles */
+    .main-nav {
+        background-color: rgba(248, 246, 243, 0.98); /* Slightly transparent version of secondary color */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .main-nav ul {
+        margin: 2rem 0;
+        gap: 1.8rem;
+    }
+    
+    .main-nav .cta-button {
+        margin-top: 1rem;
+    }
+    
+    .main-nav .cta-button a {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    
+    /* Mobile menu social icons at bottom */
+    .mobile-menu-social {
+        margin-top: 2rem;
     }
     
     .testimonials,
@@ -991,9 +1024,17 @@ em {
         margin-top: -1px; 
     }    
     .main-nav.active {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         opacity: 1;
         box-shadow: 0 6px 6px -6px rgba(0,0,0,0.1); /* Bottom-only shadow */
+        height: calc(100vh - 85px); /* Take up full height of viewport minus header */
+        overflow-y: auto; /* Allow scrolling if menu items don't fit */
+        padding: 2rem 0;
+    }
+    .site-header.scrolled .main-nav.active {
+        height: calc(100vh - 60px); /* Adjust for smaller header when scrolled */
     }
     .main-nav ul {
         flex-direction: column;
@@ -1004,9 +1045,10 @@ em {
     }
     
     .main-nav a {
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         letter-spacing: 0.01em;
         color: var(--text-color); /* Ensure text color is appropriate for default bg */
+        padding: 0.5rem 0;
     }
     
     /* Ensure text color remains appropriate when navbar is scrolled */
@@ -1357,10 +1399,11 @@ em {
     }
     
     .mobile-menu-social.social-nav a {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         background-color: rgba(214, 183, 91, 0.08);
         border-radius: 50%;
+        font-size: 1.5rem;
     }
     
     .mobile-menu-social.social-nav a:hover {
