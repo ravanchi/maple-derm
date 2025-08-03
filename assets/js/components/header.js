@@ -7,6 +7,7 @@ const HeaderComponent = {
         this.setupNavHoverEffect();
         this.handleActiveTabClick();
         this.handleAllNavLinks();
+        this.preventServicesLinkDefault();
     },
     
     injectHeader: function() {
@@ -24,14 +25,14 @@ const HeaderComponent = {
                 <nav class="main-nav">
                     <ul>
                         <li class="has-dropdown desktop-only">
-                            <a href="">Services</a>
+                            <a href="javascript:void(0);">Services</a>
                             <div class="dropdown-menu">
-                                <a href="#medical">Medical</a>
+                                <a href="medical-services.html">Medical & Surgical</a>
                                 <a href="#cosmetic">Cosmetic</a>
                                 <a href="#maintenance">Maintenance</a>
                             </div>
                         </li>
-                        <li class="mobile-only"><a href="#medical">Medical</a></li>
+                        <li class="mobile-only"><a href="medical-services.html">Medical & Surgical</a></li>
                         <li class="mobile-only"><a href="#cosmetic">Cosmetic</a></li>
                         <li class="mobile-only"><a href="#maintenance">Maintenance</a></li>
                         <li><a href="faq.html">FAQ</a></li>
@@ -253,6 +254,25 @@ const HeaderComponent = {
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+    },
+
+    // Add new method to prevent the Services parent link from doing anything
+    preventServicesLinkDefault: function() {
+        const servicesLinks = document.querySelectorAll('.has-dropdown > a');
+        
+        servicesLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default navigation and page scrolling
+                
+                // On mobile, we still want to toggle the dropdown
+                if (window.innerWidth <= 768) {
+                    const parent = this.parentNode;
+                    parent.classList.toggle('active');
+                }
+                
+                // Do nothing else (no scrolling to top)
             });
         });
     }
