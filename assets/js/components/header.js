@@ -29,12 +29,12 @@ const HeaderComponent = {
                             <div class="dropdown-menu">
                                 <a href="medical-services.html">Medical & Surgical</a>
                                 <a href="cosmetic-services.html">Cosmetic</a>
-                                <a href="#maintenance">Maintenance</a>
+                                <a href="maintenance-services.html">Maintenance</a>
                             </div>
                         </li>
                         <li class="mobile-only"><a href="medical-services.html">Medical & Surgical</a></li>
                         <li class="mobile-only"><a href="cosmetic-services.html">Cosmetic</a></li>
-                        <li class="mobile-only"><a href="#maintenance">Maintenance</a></li>
+                        <li class="mobile-only"><a href="maintenance-services.html">Maintenance</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="media.html">Media</a></li>

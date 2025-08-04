@@ -2784,10 +2784,56 @@ section h2 {
 
 /* Services Grid Styles */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: var(--space-md);
     margin-top: var(--space-md);
+}
+
+/* Center service items for layouts with fewer items */
+.services-grid.centered-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.services-grid.centered-items .service-item {
+    flex: 0 0 250px; /* Don't grow, don't shrink, base width 250px */
+    max-width: 300px; /* Maximum width */
+    margin: 0;
+}
+
+/* Two-column layout for sections with only 2 items */
+.services-grid.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.services-grid.two-columns .service-item {
+    flex: 0 0 250px;
+    max-width: 300px;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .services-grid.centered-items .service-item,
+    .services-grid.two-columns .service-item {
+        flex: 0 0 calc(50% - var(--space-md));
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 650px) {
+    .services-grid.centered-items .service-item,
+    .services-grid.two-columns .service-item {
+        flex: 0 0 100%;
+        max-width: 500px;
+    }
 }
 
 .service-item {
@@ -2882,11 +2928,6 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-sm);
-    }
-    
     .service-item {
         max-width: 400px;
         margin: 0 auto;
@@ -2932,113 +2973,20 @@ section h2 {
     opacity: 1;
 }
 
-/* Doctor Expertise Section */
-.doctor-expertise {
-    padding: var(--section-padding) 0;
-    background-color: var(--secondary-color);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.doctor-expertise-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--space-md);
-    align-items: center;
-}
-
-.doctor-image {
-    text-align: center;
-}
-
-.doctor-portrait {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.doctor-expertise-content h2 {
-    text-align: left;
-    margin: 0 0 var(--space-sm);
-}
-
-.credentials {
-    margin-top: var(--space-md);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-sm);
-}
-
-.credential-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-}
-
-.credential-item i {
+/* Fix phone link styling in steps */
+.step p a {
+    display: inline;
+    margin-top: 0;
+    text-decoration: none;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 1px;
+    transition: var(--transition);
 }
 
-.credential-item span {
-    font-weight: 500;
+.step p a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
-    .doctor-expertise-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-        text-align: center;
-    }
-    
-    .doctor-expertise-content h2 {
-        text-align: center;
-    }
-    
-    .doctor-portrait {
-        max-width: 200px;
-        margin-bottom: var(--space-sm);
-    }
-    
-    .credentials {
-        grid-template-columns: 1fr;
-        gap: var(--space-xs);
-    }
-    
-    .credential-item {
-        justify-content: center;
-    }
-}
-
-.cancer-services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
-    margin-top: var(--space-md);
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1000px;
-}
-
-@media (max-width: 992px) {
-    .cancer-services {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .cancer-services {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-sm);
-    }
-    
-    .service-item {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
