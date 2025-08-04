@@ -28,12 +28,12 @@ const HeaderComponent = {
                             <a href="javascript:void(0);">Services</a>
                             <div class="dropdown-menu">
                                 <a href="medical-services.html">Medical & Surgical</a>
-                                <a href="#cosmetic">Cosmetic</a>
+                                <a href="cosmetic-services.html">Cosmetic</a>
                                 <a href="#maintenance">Maintenance</a>
                             </div>
                         </li>
                         <li class="mobile-only"><a href="medical-services.html">Medical & Surgical</a></li>
-                        <li class="mobile-only"><a href="#cosmetic">Cosmetic</a></li>
+                        <li class="mobile-only"><a href="cosmetic-services.html">Cosmetic</a></li>
                         <li class="mobile-only"><a href="#maintenance">Maintenance</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="about.html">About</a></li>
