@@ -2,24 +2,24 @@ function injectCommonHead() {
     const favicon = document.createElement('link');
     favicon.rel = 'icon';
     favicon.type = 'image/svg+xml';
-    favicon.href = '/assets/images/favicon/favicon.svg';
+    favicon.href = 'assets/images/favicon/favicon.svg';
     document.head.appendChild(favicon);
     
     const faviconPng = document.createElement('link');
     faviconPng.rel = 'icon';
     faviconPng.type = 'image/png';
-    faviconPng.href = '/assets/images/favicon/favicon-96x96.png';
+    faviconPng.href = 'assets/images/favicon/favicon-96x96.png';
     faviconPng.setAttribute('sizes', '96x96');
     document.head.appendChild(faviconPng);
     
     const shortcutIcon = document.createElement('link');
     shortcutIcon.rel = 'shortcut icon';
-    shortcutIcon.href = '/assets/images/favicon/favicon.ico';
+    shortcutIcon.href = 'assets/images/favicon/favicon.ico';
     document.head.appendChild(shortcutIcon);
     
     const appleIcon = document.createElement('link');
     appleIcon.rel = 'apple-touch-icon';
-    appleIcon.href = '/assets/images/apple-touch-icon.png';
+    appleIcon.href = 'assets/images/apple-touch-icon.png';
     appleIcon.setAttribute('sizes', '180x180');
     document.head.appendChild(appleIcon);
     
@@ -30,7 +30,7 @@ function injectCommonHead() {
     
     const manifest = document.createElement('link');
     manifest.rel = 'manifest';
-    manifest.href = '/assets/images/favicon/site.webmanifest';
+    manifest.href = 'assets/images/favicon/site.webmanifest';
     document.head.appendChild(manifest);
     
     // Add common stylesheets

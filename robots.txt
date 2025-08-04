@@ -1,0 +1,6 @@
+# robots.txt for maplederm.com
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://maplederm.com/sitemap.xml 

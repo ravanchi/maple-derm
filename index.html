@@ -4,65 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MapleDerm - Modern Dermatology Care</title>
+    <meta name="description" content="MapleDerm offers comprehensive medical and cosmetic dermatology services for all skin types, delivered by board-certified experts.">
+    <link rel="canonical" href="https://maplederm.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maplederm.com/">
+    <meta property="og:title" content="MapleDerm - Modern Dermatology Care">
+    <meta property="og:description" content="MapleDerm offers comprehensive medical and cosmetic dermatology services for all skin types, delivered by board-certified experts.">
+    <meta property="og:image" content="https://maplederm.com/assets/images/logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maplederm.com/">
+    <meta property="twitter:title" content="MapleDerm - Modern Dermatology Care">
+    <meta property="twitter:description" content="MapleDerm offers comprehensive medical and cosmetic dermatology services for all skin types, delivered by board-certified experts.">
+    <meta property="twitter:image" content="https://maplederm.com/assets/images/logo.svg">
+    
     <script src="assets/js/shared-head.js"></script>
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "MapleDerm",
+      "image": "https://maplederm.com/assets/images/logo.svg",
+      "url": "https://maplederm.com",
+      "telephone": "(905) 832-4747",
+      "faxNumber": "(905) 832-4797",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "191 McNaughton Rd E, Suite 206",
+        "addressLocality": "Maple",
+        "addressRegion": "Ontario",
+        "postalCode": "L6A 4E2",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.8632461,
+        "longitude": -79.5014884
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "medicalSpecialty": ["Dermatology", "Cosmetic Dermatology", "Medical Dermatology"],
+      "currenciesAccepted": "CAD",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder" role="banner"></div>
 
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1><em>Science</em> driven.<br><em>Beauty</em> inspired.</h1>
-                <p class="hero-subtitle">Comprehensive medical and cosmetic dermatology for all skin types, led by board-certified experts</p>
-                <a href="contact-us.html" class="btn primary-btn">Contact Us</a>
+    <main>
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-heading"><em>Science</em> driven.<br><em>Beauty</em> inspired.</h1>
+                    <p class="hero-subtitle">Comprehensive medical and cosmetic dermatology for all skin types, led by board-certified experts</p>
+                    <a href="contact-us.html" class="btn primary-btn" aria-label="Contact Us to schedule an appointment">Contact Us</a>
+                </div>
+                
+                <div class="hero-image-container">
+                    <img class="hero-image" src="assets/images/test5.png" alt="MapleDerm clinic interior showing modern and welcoming dermatology office space">
+                </div>
             </div>
-            
-            <div class="hero-image-container">
-                <img class="hero-image" src="assets/images/test5.png" alt="MapleDerm Office Interior">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="intro">
-        <div class="container">
-            <h2>From diagnosis to rejuvenation, we provide <em>personalized</em> dermatology backed by clinical precision.</h2>
-            <div class="features" id="intro-features">
+        <section class="intro" aria-labelledby="intro-heading">
+            <div class="container">
+                <h2 id="intro-heading">From diagnosis to rejuvenation, we provide <em>personalized</em> dermatology backed by clinical precision.</h2>
+                <div class="features" id="intro-features" role="list">
+                </div>
+                <div id="about-link-container" role="navigation" aria-label="Learn more about our practice"></div>
             </div>
-            <div id="about-link-container"></div>
-        </div>
-    </section>
+        </section>
 
-    <section class="services-testimonials" id="services">
-        <div class="container">
-            <h2>Discover our <em>comprehensive</em> dermatology services</h2>
-            <div class="service-cards" id="service-cards">
-            </div>
-            
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Dr. Ghiasi is an exceptionally professional and knowledgeable dermatologist. She takes the time to listen to her patients' concerns and questions. I visited her for a dermatological condition and couldn't be more satisfied."</p>
-                        <div class="client">
-                            <span class="name">Patient Testimonial</span>
+        <section class="services-testimonials" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <h2 id="services-heading">Discover our <em>comprehensive</em> dermatology services</h2>
+                <div class="service-cards" id="service-cards" role="list">
+                </div>
+                
+                <div class="testimonial-slider" role="region" aria-label="Patient Testimonials">
+                    <div class="testimonial" role="tabpanel" aria-labelledby="testimonial-heading">
+                        <div class="testimonial-content">
+                            <div class="stars" aria-label="Five star rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <p id="testimonial-heading" class="testimonial-text">"Dr. Ghiasi is an exceptionally professional and knowledgeable dermatologist. She takes the time to listen to her patients' concerns and questions. I visited her for a dermatological condition and couldn't be more satisfied."</p>
+                            <div class="client">
+                                <span class="name">Patient Testimonial</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="slider-dots">
-                    <div class="slider-dot active" data-index="0"></div>
-                    <div class="slider-dot" data-index="1"></div>
+                    <div class="slider-dots" role="tablist" aria-label="Testimonial navigation">
+                        <div class="slider-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Testimonial 1"></div>
+                        <div class="slider-dot" data-index="1" role="tab" aria-selected="false" aria-label="Testimonial 2"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <div id="footer-placeholder"></div>
+    <div id="footer-placeholder" role="contentinfo"></div>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/components.js" type="module"></script>
@@ -96,6 +152,7 @@
                     const featureWrapper = document.createElement('div');
                     featureWrapper.style.flex = '1';
                     featureWrapper.style.minWidth = '0';
+                    featureWrapper.setAttribute('role', 'listitem');
                     featuresContainer.appendChild(featureWrapper);
                     
                     ComponentManager.components.featureCard.createFeature(
@@ -150,6 +207,7 @@
                 serviceCardsData.forEach(service => {
                     const serviceCardEl = document.createElement('div');
                     serviceCardEl.style.flex = '1';
+                    serviceCardEl.setAttribute('role', 'listitem');
                     serviceCardsContainer.appendChild(serviceCardEl);
                     ComponentManager.components.featureCard.createServiceCard(
                         serviceCardEl,
