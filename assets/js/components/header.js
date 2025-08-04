@@ -228,12 +228,17 @@ const HeaderComponent = {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         
-        // Get all navigation links (including non-active ones)
-        const navLinks = document.querySelectorAll('.main-nav a');
+        // Get all navigation links (excluding dropdown parent links)
+        const navLinks = document.querySelectorAll('.main-nav a:not(.has-dropdown > a)');
         
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
+                
+                // Skip links that have javascript:void(0)
+                if (href === 'javascript:void(0);') {
+                    return;
+                }
                 
                 // If on mobile, menu is open, and link points to current page
                 if (window.innerWidth <= mobileBreakpoint && 
