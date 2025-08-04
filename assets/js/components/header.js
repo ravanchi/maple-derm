@@ -22,34 +22,34 @@ const HeaderComponent = {
                         <img src="assets/images/logo.svg" alt="MapleDerm Logo" class="logo-img">
                     </a>
                 </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li class="has-dropdown desktop-only">
-                            <a href="javascript:void(0);">Services</a>
-                            <div class="dropdown-menu">
-                                <a href="medical-services.html">Medical & Surgical</a>
-                                <a href="cosmetic-services.html">Cosmetic</a>
-                                <a href="maintenance-services.html">Maintenance</a>
+                <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+                    <ul role="menubar">
+                        <li class="has-dropdown desktop-only" role="none">
+                            <a href="javascript:void(0);" role="menuitem" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <div class="dropdown-menu" role="menu" aria-label="Services Submenu">
+                                <a href="medical-services.html" role="menuitem" tabindex="-1">Medical & Surgical</a>
+                                <a href="cosmetic-services.html" role="menuitem" tabindex="-1">Cosmetic</a>
+                                <a href="maintenance-services.html" role="menuitem" tabindex="-1">Maintenance</a>
                             </div>
                         </li>
-                        <li class="mobile-only"><a href="medical-services.html">Medical & Surgical</a></li>
-                        <li class="mobile-only"><a href="cosmetic-services.html">Cosmetic</a></li>
-                        <li class="mobile-only"><a href="maintenance-services.html">Maintenance</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="media.html">Media</a></li>
-                        <li class="cta-button"><a href="contact-us.html">Contact Us</a></li>
-                        <li class="social-nav mobile-menu-social">
-                            <a href="https://www.instagram.com/maplederm/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.tiktok.com/@maplederm" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <li class="mobile-only" role="none"><a href="medical-services.html" role="menuitem">Medical & Surgical</a></li>
+                        <li class="mobile-only" role="none"><a href="cosmetic-services.html" role="menuitem">Cosmetic</a></li>
+                        <li class="mobile-only" role="none"><a href="maintenance-services.html" role="menuitem">Maintenance</a></li>
+                        <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
+                        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="media.html" role="menuitem">Media</a></li>
+                        <li class="cta-button" role="none"><a href="contact-us.html" role="menuitem">Contact Us</a></li>
+                        <li class="social-nav mobile-menu-social" role="none">
+                            <a href="https://www.instagram.com/maplederm/" target="_blank" aria-label="Visit our Instagram page" role="menuitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.tiktok.com/@maplederm" target="_blank" aria-label="Visit our TikTok page" role="menuitem"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </nav>
-                <div class="mobile-menu-toggle">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="main-nav">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </header>
         `;
@@ -93,8 +93,9 @@ const HeaderComponent = {
         checkMobileState();
 
         mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
+            const isExpanded = mainNav.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
         });
 
         const dropdownItems = document.querySelectorAll('.has-dropdown > a');
@@ -104,11 +105,13 @@ const HeaderComponent = {
                 if (window.innerWidth <= mobileBreakpoint) {
                     e.preventDefault();
                     const parent = this.parentNode;
-                    parent.classList.toggle('active');
+                    const isExpanded = parent.classList.toggle('active');
+                    this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
 
                     dropdownItems.forEach(otherItem => {
                         if (otherItem !== this) {
                             otherItem.parentNode.classList.remove('active');
+                            otherItem.setAttribute('aria-expanded', 'false');
                         }
                     });
                 }
@@ -271,11 +274,12 @@ const HeaderComponent = {
             link.addEventListener('click', function(e) {
                 e.preventDefault(); // Prevent default navigation and page scrolling
                 
-                // On mobile, we still want to toggle the dropdown
-                if (window.innerWidth <= 768) {
-                    const parent = this.parentNode;
-                    parent.classList.toggle('active');
-                }
+                                    // On mobile, we still want to toggle the dropdown
+                    if (window.innerWidth <= 768) {
+                        const parent = this.parentNode;
+                        const isExpanded = parent.classList.toggle('active');
+                        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+                    }
                 
                 // Do nothing else (no scrolling to top)
             });

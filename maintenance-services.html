@@ -7,8 +7,63 @@
     <meta name="description" content="Discover our personalized maintenance programs and ongoing care solutions for maintaining healthy, radiant skin at MapleDerm.">
     <link rel="canonical" href="https://maplederm.com/maintenance-services.html">
     <script src="assets/js/shared-head.js"></script>
+    
+    <!-- Structured Data for Maintenance Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "MapleDerm",
+      "url": "https://maplederm.com/maintenance-services.html",
+      "logo": "https://maplederm.com/assets/images/logo.svg",
+      "image": "https://maplederm.com/assets/images/office.jpeg",
+      "description": "Personalized programs to maintain your skin's health and extend treatment benefits",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "191 McNaughton Rd E, Suite 206",
+        "addressLocality": "Maple",
+        "addressRegion": "Ontario",
+        "postalCode": "L6A 4E2",
+        "addressCountry": "CA"
+      },
+      "telephone": "+19058324747",
+      "medicalSpecialty": ["Dermatology", "Preventive Dermatology"],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Treatment Maintenance Plans",
+          "description": "Customized follow-up schedules to maintain and enhance the results of your cosmetic and medical treatments."
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Sun Protection Planning",
+          "description": "Personalized strategies for protecting your skin from UV damage while maintaining an active lifestyle."
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Annual Skin Cancer Screening",
+          "description": "Thorough examination to detect potential skin cancers at their earliest and most treatable stages."
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+    
     <div id="header-placeholder"></div>
 
     <section class="page-hero">
@@ -122,5 +177,7 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/components.js" type="module"></script>
+
+    <script src="assets/js/accessibility-enhancements.js"></script>
 </body>
 </html> 

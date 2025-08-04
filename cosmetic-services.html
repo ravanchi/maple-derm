@@ -7,8 +7,72 @@
     <meta name="description" content="Explore our comprehensive range of cosmetic dermatology services including injectables, skincare treatments, and laser procedures at MapleDerm.">
     <link rel="canonical" href="https://maplederm.com/cosmetic-services.html">
     <script src="assets/js/shared-head.js"></script>
+    
+    <!-- Structured Data for Cosmetic Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "MapleDerm",
+      "url": "https://maplederm.com/cosmetic-services.html",
+      "logo": "https://maplederm.com/assets/images/logo.svg",
+      "image": "https://maplederm.com/assets/images/office.jpeg",
+      "description": "Advanced aesthetic treatments to help you look and feel your best",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "191 McNaughton Rd E, Suite 206",
+        "addressLocality": "Maple",
+        "addressRegion": "Ontario",
+        "postalCode": "L6A 4E2",
+        "addressCountry": "CA"
+      },
+      "telephone": "+19058324747",
+      "medicalSpecialty": ["Dermatology", "Cosmetic Dermatology"],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Botox & Dysport",
+          "description": "Neuromodulator treatments to smooth dynamic wrinkles and prevent new lines from forming.",
+          "procedureType": "https://schema.org/CosmeticProcedure"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Dermal Fillers",
+          "description": "Hyaluronic acid fillers to restore volume, enhance features, and soften deep facial lines.",
+          "procedureType": "https://schema.org/CosmeticProcedure"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Laser Treatments",
+          "description": "Advanced laser technologies for hair removal, skin rejuvenation, and vascular lesions.",
+          "procedureType": "https://schema.org/CosmeticProcedure"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Chemical Peels",
+          "description": "Professional-grade peels to exfoliate dead skin cells, stimulate collagen, and improve overall skin appearance.",
+          "procedureType": "https://schema.org/CosmeticProcedure"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+    
     <div id="header-placeholder"></div>
 
     <section class="page-hero">
@@ -241,5 +305,7 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/components.js" type="module"></script>
+
+    <script src="assets/js/accessibility-enhancements.js"></script>
 </body>
 </html> 

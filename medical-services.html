@@ -7,8 +7,63 @@
     <meta name="description" content="Explore our comprehensive range of medical and surgical dermatology services for both adults and children at MapleDerm.">
     <link rel="canonical" href="https://maplederm.com/medical-services.html">
     <script src="assets/js/shared-head.js"></script>
+    
+    <!-- Structured Data for Medical Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "MapleDerm",
+      "url": "https://maplederm.com/medical-services.html",
+      "logo": "https://maplederm.com/assets/images/logo.svg",
+      "image": "https://maplederm.com/assets/images/office.jpeg",
+      "description": "Comprehensive medical and surgical dermatology services for patients of all ages",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "191 McNaughton Rd E, Suite 206",
+        "addressLocality": "Maple",
+        "addressRegion": "Ontario",
+        "postalCode": "L6A 4E2",
+        "addressCountry": "CA"
+      },
+      "telephone": "+19058324747",
+      "medicalSpecialty": ["Dermatology", "Medical Dermatology", "Surgical Dermatology"],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Acne Treatment",
+          "description": "Treatment for all types of acne, from mild to severe, with personalized care plans."
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Actinic Keratoses Treatment",
+          "description": "Diagnosis and treatment of pre-cancerous skin growths caused by sun exposure."
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Skin Cancer Screening",
+          "description": "Comprehensive screening and treatment for various types of skin cancer including BCC, SCC, and Melanoma."
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+    
     <div id="header-placeholder"></div>
 
     <section class="page-hero">
@@ -239,5 +294,7 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/components.js" type="module"></script>
+
+    <script src="assets/js/accessibility-enhancements.js"></script>
 </body>
 </html> 

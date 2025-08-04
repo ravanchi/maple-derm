@@ -6,6 +6,8 @@
     --light-text: #FFFFFF;         
     --border-color: #E2DED4;      
     --bg-accent: #F2EFEA;          
+    --header-height: 85px;
+    --header-height-scrolled: 60px;
 
     --body-font: 'DM Sans', sans-serif;
     --heading-font: 'Playfair Display', serif;
@@ -388,6 +390,10 @@ em {
     cursor: pointer;
     margin-left: auto;
     position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
 }
 .mobile-menu-toggle span {
     display: block;
@@ -1033,25 +1039,24 @@ em {
     }
     
     .main-nav {
-        position: fixed;
-        top: 85px;
+        position: absolute;
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--secondary-color); 
         padding: 1rem 0 1.5rem;
         display: none;
         justify-content: center;
-        transition: top 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+        transition: opacity 0.3s ease, background-color 0.3s ease;
         z-index: 999; 
         opacity: 0;
+        margin-top: 0;
     }
     .site-header.scrolled .main-nav {
-        top: 60px; 
         background-color: rgba(255, 255, 255, 0.98); 
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-top: none; 
-        margin-top: -1px; 
     }    
     .main-nav.active {
         display: flex;
@@ -1059,12 +1064,17 @@ em {
         justify-content: center;
         opacity: 1;
         box-shadow: 0 6px 6px -6px rgba(0,0,0,0.1); /* Bottom-only shadow */
-        height: calc(100vh - 85px); /* Take up full height of viewport minus header */
+        height: calc(100vh - var(--header-height, 85px)); /* Take up full height of viewport minus header */
         overflow-y: auto; /* Allow scrolling if menu items don't fit */
         padding: 2rem 0;
+        margin-top: 0;
+        border-top: 0;
+        position: fixed;
+        top: var(--header-height, 85px);
     }
     .site-header.scrolled .main-nav.active {
-        height: calc(100vh - 60px); /* Adjust for smaller header when scrolled */
+        height: calc(100vh - var(--header-height-scrolled, 60px)); /* Adjust for smaller header when scrolled */
+        top: var(--header-height-scrolled, 60px);
     }
     .main-nav ul {
         flex-direction: column;
@@ -1094,6 +1104,9 @@ em {
     
     .mobile-menu-toggle {
         display: flex;
+        background: transparent;
+        border: none;
+        padding: 0;
     }
     
     .site-header .container {
@@ -2988,5 +3001,95 @@ section h2 {
 .step p a:hover {
     color: var(--accent-color);
     border-bottom-color: var(--accent-color);
+}
+
+/* Media Query for Extra Small Devices */
+@media (max-width: 375px) {
+    /* Improve readability on small screens */
+    h1 {
+        font-size: 2.3rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    /* Improve touch targets for mobile */
+    .main-nav a, 
+    .cta-button a,
+    .btn,
+    .service-item a {
+        padding: 0.8rem;
+        min-height: 44px; /* Minimum touch target size */
+    }
+    
+    /* Fix spacing on mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Improve mobile menu experience */
+    .mobile-menu-toggle {
+        width: 44px;
+        height: 44px;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(194, 161, 77, 0.4);
+}
+
+
+
+/* Responsive Table Styles for Mobile */
+@media (max-width: 768px) {
+    .hours-list {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .btn,
+    .primary-btn,
+    .service-icon,
+    .feature-icon,
+    .footer-logo-img,
+    .logo-img {
+        forced-color-adjust: none;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
