@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #C2A14D;      
-    --secondary-color: #F8F6F3;    
-    --accent-color: #9A7B32;      
-    --text-color: #2F2F2F;         
-    --light-text: #FFFFFF;         
-    --border-color: #E2DED4;      
-    --bg-accent: #F2EFEA;          
+    --primary-color: #D4AF37;      /* Gold */
+    --secondary-color: #F8F6F3;    /* Light cream/off-white background */
+    --accent-color: #4A2C2A;       /* Espresso brown */
+    --text-color: #3A2218;         /* Dark espresso for text */
+    --light-text: #FFFFFF;         /* White text */
+    --border-color: #E2DED4;       /* Light border color */
+    --bg-accent: #F5F1E9;          /* Subtle gold-tinted background */
     --header-height: 85px;
     --header-height-scrolled: 60px;
 
@@ -154,9 +154,9 @@ em {
     -webkit-tap-highlight-color: transparent;
 }
 .primary-btn:hover {
-    background-color: var(--accent-color);
+    background-color: #C2A14D;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+    box-shadow: 0 5px 15px rgba(194, 161, 77, 0.3);
 }
 .text-link {
     color: var(--primary-color);
@@ -297,7 +297,7 @@ em {
     justify-content: center; /* Center content horizontally */
 }
 .cta-button a:hover {
-    background-color: var(--accent-color);
+    background-color: #C2A14D;
     transform: translateY(-2px);
     box-shadow: none;
 }
@@ -876,12 +876,12 @@ em {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(214, 183, 91, 0.08);
+    background-color: rgba(212, 175, 55, 0.08);
 }
 .social-icons a:hover {
     color: var(--primary-color);
     opacity: 1;
-    background-color: rgba(214, 183, 91, 0.15);
+    background-color: rgba(212, 175, 55, 0.15);
     transform: translateY(-2px);
 }
 @media (max-width: 1024px) {
@@ -1444,13 +1444,13 @@ em {
     .mobile-menu-social.social-nav a {
         width: 50px;
         height: 50px;
-        background-color: rgba(214, 183, 91, 0.08);
+        background-color: rgba(212, 175, 55, 0.08);
         border-radius: 50%;
         font-size: 1.5rem;
     }
     
     .mobile-menu-social.social-nav a:hover {
-        background-color: rgba(214, 183, 91, 0.15);
+        background-color: rgba(212, 175, 55, 0.15);
     }
 }
 section h2 {
@@ -1827,7 +1827,7 @@ section h2 {
     margin-top: var(--space-sm);
     padding: var(--space-sm);
     background-color: #FFF8E1;
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--accent-color);
     border-radius: 4px;
     text-align: left;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -1842,7 +1842,7 @@ section h2 {
 }
 
 .disclaimer strong {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .process-description p {
@@ -1866,7 +1866,7 @@ section h2 {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
-    border-top: 3px solid var(--primary-color);
+    border-top: 3px solid var(--accent-color);
 }
 .step-number {
     position: absolute;
@@ -1875,7 +1875,7 @@ section h2 {
     transform: translateX(-50%);
     width: 40px;
     height: 40px;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -2866,7 +2866,7 @@ section h2 {
 .service-icon {
     width: 60px;
     height: 60px;
-    background-color: rgba(194, 161, 77, 0.1);
+    background-color: rgba(212, 175, 55, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2902,7 +2902,7 @@ section h2 {
 .service-item.highlighted .service-icon {
     width: 60px;
     height: 60px;
-    background-color: rgba(194, 161, 77, 0.1);
+    background-color: rgba(212, 175, 55, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3057,7 +3057,7 @@ textarea:focus-visible,
 select:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px rgba(194, 161, 77, 0.4);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
 }
 
 
