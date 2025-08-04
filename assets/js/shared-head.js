@@ -28,18 +28,6 @@ function injectCommonHead() {
     appTitle.content = 'MapleDerm';
     document.head.appendChild(appTitle);
     
-    // Add apple-mobile-web-app-capable meta tag
-    const mobileWebAppCapable = document.createElement('meta');
-    mobileWebAppCapable.name = 'apple-mobile-web-app-capable';
-    mobileWebAppCapable.content = 'yes';
-    document.head.appendChild(mobileWebAppCapable);
-    
-    // Add apple-mobile-web-app-status-bar-style meta tag
-    const statusBarStyle = document.createElement('meta');
-    statusBarStyle.name = 'apple-mobile-web-app-status-bar-style';
-    statusBarStyle.content = 'default';
-    document.head.appendChild(statusBarStyle);
-    
     const manifest = document.createElement('link');
     manifest.rel = 'manifest';
     manifest.href = 'assets/images/favicon/site.webmanifest';

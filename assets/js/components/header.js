@@ -61,14 +61,6 @@ const HeaderComponent = {
         const header = document.querySelector('.site-header');
         if (!header) return;
 
-        // Force Safari to refresh the header rendering
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        if (isIOS) {
-            // Apply a small transform to force hardware acceleration
-            header.style.transform = 'translateZ(0)';
-            header.style.webkitTransform = 'translateZ(0)';
-        }
-
         if (window.scrollY > 10) {
             header.classList.add('scrolled');
         }
@@ -78,20 +70,8 @@ const HeaderComponent = {
             
             if (scrollTop > 10) {
                 header.classList.add('scrolled');
-                // Force repaint on Safari
-                if (isIOS) {
-                    header.style.display = 'none';
-                    header.offsetHeight; // Force reflow
-                    header.style.display = '';
-                }
             } else {
                 header.classList.remove('scrolled');
-                // Force repaint on Safari
-                if (isIOS) {
-                    header.style.display = 'none';
-                    header.offsetHeight; // Force reflow
-                    header.style.display = '';
-                }
             }
         });
     },
