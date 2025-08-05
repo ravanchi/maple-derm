@@ -248,6 +248,9 @@ em {
     font-size: 0.95rem;
     letter-spacing: 0.01em;
 }
+.main-nav a:hover {
+    color: #C2A14D;
+}
 .scrolled .main-nav a {
     color: var(--text-color);
 }
@@ -362,7 +365,7 @@ em {
 }
 
 .privacy-content a:hover {
-    color: var(--accent-color);
+    color: #C2A14D;
 }
 
 .contact-details {
@@ -820,7 +823,7 @@ em {
 }
 .footer-address a:hover,
 .footer-legal a:hover {
-    color: var(--accent-color);
+    color: #C2A14D;
 }
 .made-with {
     font-size: 0.9rem;
@@ -879,7 +882,7 @@ em {
     background-color: rgba(212, 175, 55, 0.08);
 }
 .social-icons a:hover {
-    color: var(--primary-color);
+    color: #C2A14D;
     opacity: 1;
     background-color: rgba(212, 175, 55, 0.15);
     transform: translateY(-2px);
@@ -1365,7 +1368,7 @@ em {
 }
 .dropdown-menu a:hover {
     background-color: var(--bg-accent);
-    color: var(--primary-color);
+    color: #C2A14D;
 }
 .dropdown-menu a:after {
     display: none;
@@ -1428,7 +1431,8 @@ em {
     justify-content: center;
 }
 .social-nav a:hover {
-    color: var(--primary-color);
+    color: #C2A14D;
+    opacity: 1;
     transform: translateY(-2px);
 }
 .social-nav a:after {
@@ -1899,6 +1903,9 @@ section h2 {
     margin-top: var(--space-xs);
     text-align: center;
 }
+.step a:hover {
+    color: #C2A14D;
+}
 @media (max-width: 768px) {
     .steps-grid {
         grid-template-columns: 1fr;
@@ -2112,7 +2119,7 @@ section h2 {
 }
 
 .service-item:hover h3 {
-    color: var(--primary-color);
+    color: #C2A14D;
 }
 
 .service-intro p + p {
@@ -2392,6 +2399,7 @@ section h2 {
 .instagram-view-profile a:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(179, 135, 40, 0.3);
+    background-color: #C2A14D;
 }
 
 /* Instagram Feed Responsive Styles */
@@ -2999,8 +3007,8 @@ section h2 {
 }
 
 .step p a:hover {
-    color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
+    color: #C2A14D;
+    border-bottom-color: #C2A14D;
 }
 
 /* Media Query for Extra Small Devices */
