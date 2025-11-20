@@ -303,6 +303,7 @@ em {
     background-color: #C2A14D;
     transform: translateY(-2px);
     box-shadow: none;
+    color: var(--light-text);
 }
 
 
