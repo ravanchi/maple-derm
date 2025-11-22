@@ -36,7 +36,7 @@ const HeaderComponent = {
                         <li class="mobile-only" role="none"><a href="cosmetic-services.html" role="menuitem">Cosmetic</a></li>
                         <li class="mobile-only" role="none"><a href="maintenance-services.html" role="menuitem">Maintenance</a></li>
                         <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
-                        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="our-team.html" role="menuitem">Our Team</a></li>
                         <li role="none"><a href="media.html" role="menuitem">Media</a></li>
                         <li class="cta-button" role="none"><a href="contact-us.html" role="menuitem">Contact Us</a></li>
                         <li class="social-nav mobile-menu-social" role="none">
